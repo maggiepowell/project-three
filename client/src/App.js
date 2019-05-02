@@ -1,33 +1,16 @@
-import React, { Component } from 'react';
-import Game from "./components/Game";
+import React from 'react';
+import NavBar from './components/NavBar'
+import GameCarousel from "./components/GameCarousel"
 import './App.css';
 
-
-class App extends Component {
-
-    state = {
-    gameId: 1,
-  };
-
-  resetGame = () =>
-    this.setState(prevState => ({
-      gameId: prevState.gameId + 1,
-    }));
-
-  render() {
-      return (
-        <Game
-          key={this.state.gameId}
-          autoPlay={this.state.gameId > 1}
-          challengeRange={[2, 9]}
-          challengeSize={6}
-          answerSize={4}
-          initialSeconds={15}
-          onPlayAgain={this.resetGame}
-        />
-      );
-  }
-
+function App() {
+  return (
+    <div>
+      <NavBar/>
+      <GameCarousel/>
+    </div>
+    
+  );
 }
 
 export default App;
