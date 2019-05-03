@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "express": "^4.16.4",
     "sequelize": "^5.7.6",
-    "express": "^4.16.4"
+    "zinggrid": "^1.1.0"
   },
   "devDependencies": {},
   "scripts": {
