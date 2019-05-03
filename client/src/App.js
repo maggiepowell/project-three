@@ -1,18 +1,21 @@
 import React from 'react';
+import NavBar from './components/NavBar';
+import GameCarousel from "./components/GameCarousel";
+import GameMenu from "./components/GameMenu";
+import LeaderBoard from "./components/LeaderBoard"
+import { Container, Row, Col } from "./components/Grid";
 import './App.css';
-import Quiz from './components/trivia';
 
 function App() {
   return (
-<div>
-  <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>React Quiz</h2>
-      </div>
-      <Question content="What is your favourite food?" />
+    <div>
+      <NavBar/>
+      <GameCarousel/>
+      <GameMenu/>
+      <LeaderBoard/>
     </div>
-  </div>  );
+    
+  );
 }
 
 export default App;
