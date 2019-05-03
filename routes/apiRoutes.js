@@ -13,11 +13,11 @@ module.exports = function (app) {
         console.log(req.body);
             db.Travel.create({
                 username: DataTypes.STRING,
-                password: DataTypes.STRING,
-                email: DataTypes.STRING,
-                name: DataTypes.STRING,
-                birthday: DataTypes.STRING,
-                rank: DataTypes.INTERGER
+                overall_score: DataTypes.INTERGER,
+                score_memory: DataTypes.INTERGER,
+                score_trivia: DataTypes.INTERGER,
+                score_minesweeper: DataTypes.INTERGER,
+                score_math: DataTypes.INTERGER
             }).then(function (dbWannagetajob) {
                 res.json(dbWannagetajob);
             });
