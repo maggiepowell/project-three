@@ -1,37 +1,39 @@
 import React from 'react';
-import Swiper from 'react-id-swiper';
+import Swiper from 'react-id-swiper/lib/ReactIdSwiper.full'
+import "./style.css";
 
-const GameCarousal = () => {
-  const params = {
-    effect: 'coverflow',
+
+
+class GameCarousel extends React.Component {
+  render() {
+    const params = {
+      effect: 'coverflow',
       grabCursor: true,
       centeredSlides: true,
-      slidesPerView: 'auto',
+      slidesPerView: 3,
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
         depth: 100,
         modifier: 1,
-        slideShadows: true
+        slideShadows : true,
       },
-      pagination: {
-        el: '.swiper-pagination'
-      }
+      loop: true, 
   }
- 
-  return(
-    <div>
-        <div className="swiper-container">
+
+    return(
+      <div className="jumbotron">
+        <h1 className="text-center">FeaturedGames</h1>
             <Swiper {...params}>
-                <span><img src="https://via.placeholder.com/150/000000/FFFFFFC/O https://placeholder.com/" alt="placeholder"/></span>
-                <span><img src="https://via.placeholder.com/150/000000/FFFFFFC/O https://placeholder.com/" alt="placeholder"/></span>
-                <span><img src="https://via.placeholder.com/150/000000/FFFFFFC/O https://placeholder.com/" alt="placeholder"/></span>
-                <span><img src="https://via.placeholder.com/150/000000/FFFFFFC/O https://placeholder.com/" alt="placeholder"/></span>
-                <span><img src="https://via.placeholder.com/150/000000/FFFFFFC/O https://placeholder.com/" alt="placeholder"/></span>
+                <div className="swiper-slide">Slide 1</div>
+                <div className="swiper-slide">Slide 2</div>
+                <div className="swiper-slide">Slide 3</div>
+                <div className="swiper-slide">Slide 4</div>
             </Swiper>
-        </div>
-    </div>
-  )
+      </div>
+    )
+  }
+  
 }
- 
-export default GameCarousal;
+
+export default GameCarousel
