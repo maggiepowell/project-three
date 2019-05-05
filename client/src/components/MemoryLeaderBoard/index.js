@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ZingGrid from 'zinggrid';
 import { Container, Row, Col } from "../Grid";
+import "../OverallLeaderBoard/style.css"
 
-class OverallLeaderBoard extends Component {
+class MemoryLeaderBoard extends Component {
 
   // initialize variables
   constructor(props) {
@@ -17,7 +18,7 @@ class OverallLeaderBoard extends Component {
     // set state and reflect that change through attribute mutation
     this.setState(() => {
       return {
-        "overall": [
+        "memory": [
           {
             "username": "user1",
             "points": "10000"
@@ -43,11 +44,11 @@ class OverallLeaderBoard extends Component {
       <Container>
         <Row>
           <Col size="sm-12">
-            <zing-grid id="helloWorld" caption="Overall Score" data={JSON.stringify(this.state.overall)} loading></zing-grid>
+            <zing-grid id="MemoryLeaderBoard" caption="Memory Champions" data={JSON.stringify(this.state.memory)} loading></zing-grid>
           </Col>
         </Row>
       </Container>
     );
   }
 }
-export default OverallLeaderBoard;
+export default MemoryLeaderBoard;
