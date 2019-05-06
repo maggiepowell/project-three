@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Game from "./components/Game";
+import Game from "../Game";
 
-class GamePage extends  Component {
+class MathGame extends Component {
 
     state = {
     gameId: 1,
@@ -28,4 +28,4 @@ class GamePage extends  Component {
 
 }
 
-export default GamePage;
+export default MathGame;

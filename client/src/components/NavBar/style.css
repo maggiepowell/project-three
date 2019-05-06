@@ -2,6 +2,10 @@
     background-color: #333333;
 }
 
+nav.bg-dark.navbar.navbar-expand.navbar-light {
+    padding: 0px;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: #f6f1d5 !important;
 }
