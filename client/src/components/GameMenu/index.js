@@ -7,11 +7,12 @@ import MemoryIcon from "../HomePageImages/memory-icon.png";
 import TriviaIcon from "../HomePageImages/trivia-icon.png";
 import MinesIcon from "../HomePageImages/minesweeper-icon.png";
 import Card from "react-bootstrap/Card";
+import "./style.css"
 
 class GameMenu extends React.Component {
   render() {
   return (
-        <Container className="game-menu-container">
+        <div className="container game-menu-container">
             <Row>
                 <Col size="sm-12">
                     <Row>
@@ -74,7 +75,7 @@ class GameMenu extends React.Component {
                     </Row>
                 </Col>
             </Row>
-          </Container>
+          </div>
     );
 
   }

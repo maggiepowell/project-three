@@ -44,7 +44,7 @@ class OverallLeaderBoard extends Component {
       <Container>
         <Row>
           <Col size="sm-12">
-            <zing-grid id="overallLeaderboard" caption="Overall Champions" data={JSON.stringify(this.state.overall)} loading></zing-grid>
+            <zing-grid className="leader-board" id="overallLeaderboard" caption="Overall Champions" data={JSON.stringify(this.state.overall)} loading></zing-grid>
           </Col>
         </Row>
       </Container>

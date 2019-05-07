@@ -1,22 +1,8 @@
 .bg-color {
-    background-color: rgba(13, 13, 13, 0.15);
+    background-image:url("../HomePageImages/banner1.jpg");
+    background-size: 100% 100%;
     padding: 30px 0px 30px 0px;
-    margin-bottom: 1rem;
-}
-
-h1 {
-   margin: 0px;
-   padding-bottom: 10px;
-   color: rgb(13, 128, 167);;
-   font-family: fairwater-script, sans-serif;
-   font-weight: 700;
-   font-style: normal;
-}
-
-
-.jumbotron {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    margin-bottom: 1.5rem;
 }
 
 .swiper-slide {
