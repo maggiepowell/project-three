@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Number from "../Number/index.js";
+import { Col, Row, Container } from "../Grid"
 import _ from 'lodash';
 import "./index.css";
 
@@ -7,33 +8,29 @@ import "./index.css";
 const randomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
-const colors = {
-  new: 'lightblue',
-  playing: 'deepskyblue',
-  won: 'lightgreen',
-  lost: 'lightcoral',
-};
-
-
 class Game extends Component {
   state = {
-    gameStatus: 'new', // new, playing, won, lost
+    gameStatus: "new",
     remainingSeconds: this.props.initialSeconds,
     selectedIds: [],
+    wins: 0,
+    losses: 0,
   };
+  
   challengeNumbers = Array.from({
     length: this.props.challengeSize,
   }).map(() =>
     randomNumberBetween(...this.props.challengeRange)
   );
+
   target = _.sum(
     _.sampleSize(this.challengeNumbers, this.props.answerSize)
   );
+
   componentDidMount() {
-    if (this.props.autoPlay) {
       this.startGame();
-    }
   }
+
   componentWillUnmount() {
     clearInterval(this.intervalId);
   }
@@ -49,7 +46,7 @@ class Game extends Component {
             prevState.remainingSeconds - 1;
           if (newRemainingSeconds === 0) {
             clearInterval(this.intervalId);
-            return { gameStatus: 'lost', remainingSeconds: 0 };
+            return { gameStatus: 'done', remainingSeconds: 0 };
           }
           return { remainingSeconds: newRemainingSeconds };
         });
@@ -77,60 +74,58 @@ class Game extends Component {
       }
     );
   };
-  calcGameStatus = newSelectedIds => {
+
+calcGameStatus = newSelectedIds => {
     const sumSelected = newSelectedIds.reduce(
       (acc, curr) => acc + this.challengeNumbers[curr],
       0
     );
-    if (newSelectedIds.length !== this.props.answerSize) {
-      return 'playing';
+     if (sumSelected === this.target) {
+      this.setState({ wins: this.wins + 1});
     }
-    return sumSelected === this.target ? 'won' : 'lost';
-  };
+    else {
+      this.setState({ losses: this.losses + 1});
+      console.log(this.state.losses)
+    }
+  return "new"
+}
 
   render() {
-    const { gameStatus, remainingSeconds } = this.state;
     return (
-      <div className="game">
-        <div className="help">
-          Pick {this.props.answerSize} numbers that sum to the
-          target in {this.props.initialSeconds} seconds
-        </div>
-        <div
-          className="target"
-          style={{ backgroundColor: colors[gameStatus] }}
-        >
-          {gameStatus === 'new' ? 'TARGET' : this.target}
-        </div>
-        <div className="challenge-numbers">
-          {this.challengeNumbers.map((value, index) =>
-            <Number
-              key={index}
-              id={index}
-              value={gameStatus === 'new' ? '?' : value}
-              clickable={this.isNumberAvailable(index)}
-              onClick={this.selectNumber}
-            />
-          )}
-        </div>
-        <div className="footer">
-          {gameStatus === 'new' &&
-            <button onClick={this.startGame}>Start</button>
-          }
-
-          {gameStatus === 'playing' &&
-            <div className="timer-value">{remainingSeconds}</div>
-          }
-
-          {['won', 'lost'].includes(gameStatus) &&
-            <button onClick={this.props.onPlayAgain}>
-              Play Again
-            </button>
-          }
-        </div>
-      </div>
+      <Container>
+        <Row>
+          <Col size="sm-12">
+            <div className="help text-center">
+                Instructions here
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col size="sm-3"></Col>
+          <Col size="sm-6">
+            <div className="card">
+              <div className="card-body">
+                <h1 className="target text-center">{this.target}</h1>
+              </div>
+            </div>
+          </Col>
+          <Col size="sm-3"></Col>
+        </Row>
+          <div className="challenge-numbers">
+            <Row>
+            {this.challengeNumbers.map((value, index) =>
+              <Number key={index} value={value} />
+            )}
+            </Row>
+          </div>
+        <Row>
+          <Col size="sm-12">
+            <div class="timer">{this.props.initialSeconds}</div>
+          </Col>
+        </Row>    
+      </Container>
     );
   }
 }
 
-export default Game;
+export default Game 

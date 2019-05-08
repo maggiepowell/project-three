@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Col, Row } from "../Grid";
 
 
 class Number extends Component {
@@ -11,13 +12,21 @@ class Number extends Component {
 
     render() {
     return (
-        <div
-            className="number"
-            style={{ opacity: this.props.clickable ? 1 : 0.3 }}
-            onClick={this.handleClick}
-        >
-            {this.props.value}
-        </div>
+        <Col size="sm-6">
+            <div className="card">
+                <div class="card-body">
+                    <h1 className="text-center">
+                        <div
+                            className="number"
+                            style={{ opacity: this.props.clickable ? 1 : 0.3 }}
+                            onClick={this.handleClick}
+                        >
+                            {this.props.value}
+                        </div>
+                    </h1>
+                </div>
+            </div>
+        </Col>
         );
     }
 }
