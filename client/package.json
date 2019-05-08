@@ -16,7 +16,8 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
-    "swiper": "^4.5.0"
+    "swiper": "^4.5.0",
+    "zinggrid": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
