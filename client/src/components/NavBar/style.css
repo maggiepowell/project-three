@@ -1,0 +1,11 @@
+.bg-dark {
+    background-color: #8C0B23 !important;
+}
+
+nav.bg-dark.navbar.navbar-expand.navbar-light {
+    padding: 0px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #F2F2F0 !important;
+}

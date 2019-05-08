@@ -1,5 +1,6 @@
 import React from 'react';
 import Swiper from 'react-id-swiper/lib/ReactIdSwiper.full'
+import { Container, Row, Col } from "../Grid";
 import "./style.css";
 
 
@@ -22,14 +23,15 @@ class GameCarousel extends React.Component {
   }
 
     return(
-      <div className="jumbotron">
-        <h1 className="text-center">FeaturedGames</h1>
+      <div className="bg-color">
+        <div class="container">
             <Swiper {...params}>
-                <div className="swiper-slide">Slide 1</div>
-                <div className="swiper-slide">Slide 2</div>
-                <div className="swiper-slide">Slide 3</div>
-                <div className="swiper-slide">Slide 4</div>
+                <div className="swiper-slide" id="addition-game"></div>
+                <div className="swiper-slide" id="minesweeper-game"></div>
+                <div className="swiper-slide" id="trivia-game"></div>
+                <div className="swiper-slide" id="memory-game"></div>
             </Swiper>
+          </div>
       </div>
     )
   }

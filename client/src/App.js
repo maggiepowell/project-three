@@ -1,19 +1,16 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import GameCarousel from "./components/GameCarousel";
-import GameMenu from "./components/GameMenu";
-import LeaderBoard from "./components/LeaderBoard"
-import { Container, Row, Col } from "./components/Grid";
-import './App.css';
+import Home from "./pages/Home";
+import MathGame from "./pages/MathGame"
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 function App() {
   return (
-    <div>
-      <NavBar/>
-      <GameCarousel/>
-      <GameMenu/>
-      <LeaderBoard/>
-    </div>
+    <Router>
+      <div>
+        <Route path="/" component={Home}/>
+        <Route path="/MathGame" component={MathGame}/>
+      </div>
+    </Router>
     
   );
 }
