@@ -4,93 +4,99 @@ import { Col, Row, Container } from "../Grid"
 import _ from 'lodash';
 import "./index.css";
 
-
 const randomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 class Game extends Component {
+
   state = {
-    gameStatus: "new",
-    remainingSeconds: this.props.initialSeconds,
-    selectedIds: [],
-    wins: 0,
-    losses: 0,
-  };
-  
+      isGameDone: false,
+      remainingSeconds: this.props.initialSeconds,
+      challengeNumbers: [],
+      selectedIds: [],
+      target: 0,
+      wins: 0,
+      losses: 0,
+    };
+
   challengeNumbers = Array.from({
-    length: this.props.challengeSize,
-  }).map(() =>
-    randomNumberBetween(...this.props.challengeRange)
-  );
+      length: this.props.challengeSize,
+    }).map(() =>
+      randomNumberBetween(...this.props.challengeRange)
+    );
 
   target = _.sum(
-    _.sampleSize(this.challengeNumbers, this.props.answerSize)
-  );
+      _.sampleSize(this.challengeNumbers, this.props.answerSize)
+    );
 
-  componentDidMount() {
-      this.startGame();
-  }
 
-  componentWillUnmount() {
-    clearInterval(this.intervalId);
-  }
-
-  isNumberAvailable = numberIndex =>
+  isNumberAvailable = numberIndex => 
     this.state.selectedIds.indexOf(numberIndex) === -1;
 
+
+  selectNumber = numberIndex => {
+    var selectedIds = this.state.selectedIds;
+  
+    if (selectedIds.length !== this.props.answerSize) {
+      selectedIds.push(numberIndex);
+      console.log(selectedIds);
+    }
+    else {
+      this.winOrLoss(selectedIds);
+    }
+  }
+  
   startGame = () => {
-    this.setState({ gameStatus: 'playing' }, () => {
       this.intervalId = setInterval(() => {
         this.setState(prevState => {
           const newRemainingSeconds =
             prevState.remainingSeconds - 1;
           if (newRemainingSeconds === 0) {
             clearInterval(this.intervalId);
-            return { gameStatus: 'done', remainingSeconds: 0 };
+            console.log("done")
+            return { isGameDone: true, remainingSeconds: 60 };
           }
           return { remainingSeconds: newRemainingSeconds };
         });
       }, 1000);
-    });
+
   };
 
-  selectNumber = numberIndex => {
-    this.setState(
-      prevState => {
-        if (prevState.gameStatus !== 'playing') {
-          return null;
-        }
-        const newSelectedIds = 
-          [ ...prevState.selectedIds, numberIndex ];
-        return {
-          selectedIds: newSelectedIds,
-          gameStatus: this.calcGameStatus(newSelectedIds),
-        };
-      },
-      () => {
-        if (this.state.gameStatus !== 'playing') {
-          clearInterval(this.intervalId);
-        }
-      }
-    );
-  };
-
-calcGameStatus = newSelectedIds => {
-    const sumSelected = newSelectedIds.reduce(
+  winOrLoss = selectedIds => {
+    const sumSelected = selectedIds.reduce(
       (acc, curr) => acc + this.challengeNumbers[curr],
       0
     );
-     if (sumSelected === this.target) {
-      this.setState({ wins: this.wins + 1});
+
+    if (sumSelected === this.target) {
+      console.log(sumSelected)
+      this.handleWin();
+  
     }
     else {
-      this.setState({ losses: this.losses + 1});
-      console.log(this.state.losses)
+      console.log(sumSelected)
+      this.handleLoss();
     }
-  return "new"
-}
+  };
+
+  handleWin = () => {
+    console.log("win");
+    this.setState({
+      wins: this.state.wins + 1, 
+      selectedIds: []
+    })
+  }  
+
+  handleLoss = () => {
+    console.log("loss");
+    this.setState({
+      losses: this.state.losses + 1,
+      selectedIds: []
+    })
+  }
 
   render() {
+    const { remainingSeconds } = this.state;
     return (
       <Container>
         <Row>
@@ -114,15 +120,29 @@ calcGameStatus = newSelectedIds => {
           <div className="challenge-numbers">
             <Row>
             {this.challengeNumbers.map((value, index) =>
-              <Number key={index} value={value} />
+              <Number 
+                key={index}
+                id={index} 
+                value={value}
+                clickable={this.isNumberAvailable(index)}
+                onClick={this.selectNumber} />
             )}
             </Row>
           </div>
         <Row>
-          <Col size="sm-12">
-            <div class="timer">{this.props.initialSeconds}</div>
+          <Col size="sm-6">
+            <div className="timer">{remainingSeconds}</div>
           </Col>
-        </Row>    
+          <Col size="sm-6">
+            <button onClick={this.startGame}>Start</button>
+          </Col>
+        </Row>  
+        <Row>
+          <Col size="sm-6">
+            <h4 className="text-center">Wins: {this.state.wins}</h4>
+            <h4 className="text-center">Losses: {this.state.losses}</h4>
+          </Col>
+        </Row>  
       </Container>
     );
   }
