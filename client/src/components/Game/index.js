@@ -12,9 +12,7 @@ class Game extends Component {
   state = {
       isGameDone: false,
       remainingSeconds: this.props.initialSeconds,
-      challengeNumbers: [],
       selectedIds: [],
-      target: 0,
       wins: 0,
       losses: 0,
     };
@@ -24,6 +22,7 @@ class Game extends Component {
     }).map(() =>
       randomNumberBetween(...this.props.challengeRange)
     );
+  
 
   target = _.sum(
       _.sampleSize(this.challengeNumbers, this.props.answerSize)
@@ -59,7 +58,6 @@ class Game extends Component {
           return { remainingSeconds: newRemainingSeconds };
         });
       }, 1000);
-
   };
 
   winOrLoss = selectedIds => {
@@ -83,7 +81,9 @@ class Game extends Component {
     console.log("win");
     this.setState({
       wins: this.state.wins + 1, 
-      selectedIds: []
+      selectedIds: [],
+      challengeNumbers: this.challengeNumbers,
+      target: this.target
     })
   }  
 
@@ -91,7 +91,9 @@ class Game extends Component {
     console.log("loss");
     this.setState({
       losses: this.state.losses + 1,
-      selectedIds: []
+      selectedIds: [],
+      challengeNumbers: this.challengeNumbers,
+      target: this.target
     })
   }
 

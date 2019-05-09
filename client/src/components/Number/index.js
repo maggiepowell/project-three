@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Col, Row } from "../Grid";
+import { Col } from "../Grid"
+import "./style.css";
 
 
 class Number extends Component {
