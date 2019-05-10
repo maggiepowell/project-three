@@ -8,6 +8,8 @@ import MathGame from "./pages/MathGame";
 // import Trivia from "./pages/Trivia";
 import OverallLeaderBoard from "./components/OverallLeaderBoard";
 import MemoryLeaderBoard from "./components/MemoryLeaderBoard";
+import MathLeaderboard from "./components/MathLeaderBoard";
+
 
 
 function App() {
