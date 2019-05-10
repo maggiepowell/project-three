@@ -3,35 +3,88 @@ import PropTypes from 'prop-types';
 import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
+import quizQuestions from './api/quizQuestions';
 
-function Quiz(props) {
+class Quiz extends React.Component {
 
-  function renderAnswerOptions(key) {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      counter: 0,
+      questionId: 1,
+      question: '',
+      answerOptions: [],
+      answer: '',
+      answersCount: {
+        nintendo: 0,
+        microsoft: 0,
+        sony: 0
+      },
+      result: ''
+    };
+
+    this.renderAnswerOptions = this.renderAnswerOptions.bind(this);
+  }
+
+//The componentWillMount life cycle event is invoked once, both on the client and server, immediately before the initial rendering occurs.
+//When you call setState within this method as we are above on line 4, render() will see the updated state and it will be executed only once despite the state change
+  componentWillMount() {
+    const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));  
+  
+    this.setState({
+      question: quizQuestions[0].question,
+      answerOptions: shuffledAnswerOptions[0]
+    });
+  }  
+
+  //randomise the order of the answer options
+  shuffleArray(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  };  
+  renderAnswerOptions(key) {
     return (
       <AnswerOption
         key={key.content}
         answerContent={key.content}
         answerType={key.type}
-        answer={props.answer}
-        questionId={props.questionId}
-        onAnswerSelected={props.onAnswerSelected}
+        answer={this.props.answer}
+        questionId={this.props.questionId}
+        onAnswerSelected={this.props.onAnswerSelected}
       />
     );
   }
 
+  render() {
     return (
         <div className="quiz">
           <QuestionCount
-            counter={props.questionId}
-            total={props.questionTotal}
+            counter={this.props.questionId}
+            total={this.props.questionTotal}
           />
-          <Question content={props.question} />
+          <Question content={this.props.question} />
           <ul className="answerOptions">
-            {props.answerOptions.map(renderAnswerOptions)}
+            {this.props.answerOptions.map(this.renderAnswerOptions)}
           </ul>
         </div>
     );
   }
+}
   
   Quiz.propTypes = {
     answer: PropTypes.string.isRequired,
