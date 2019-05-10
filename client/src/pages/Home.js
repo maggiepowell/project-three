@@ -1,29 +1,50 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
-import GameCarousel from "../components/GameCarousel";
-import GameMenu from "../components/GameMenu";
-import LeaderBoardNavs from "../components/LeaderBoardNavs";
-import OverallLeaderBoard from "../components/OverallLeaderBoard";
-import MemoryLeaderBoard from "../components/MemoryLeaderBoard";
-import MathLeaderBoard from "../components/MathLeaderBoard";
-import MinesLeaderBoard from "../components/MinesLeaderBoard";
-import TriviaLeaderBoard from "../components/TriviaLeaderBoard"
+import NavBar from '../Components/NavBar';
+import GameCarousel from "../Components/GameCarousel";
+import GameMenu from "../Components/GameMenu";
+import LeaderBoardNavs from "../Components/LeaderBoardNavs";
+import LeaderBoard from "../Components/LeaderBoard";
+import axios from 'axios';
 
-function Home() {
-  return (
-    <div>
-      <NavBar/>
-      <GameCarousel/>
-      <GameMenu/>
-      <LeaderBoardNavs/>
-      <OverallLeaderBoard/>
-      <MemoryLeaderBoard/>
-      <MathLeaderBoard/>
-      <MinesLeaderBoard/>
-      <TriviaLeaderBoard/>
-    </div>
-    
-  );
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      overall: [],
+      memory: [],
+      math: [],
+      trivia: [],
+      minesweeper: []
+    }
+  }
+  
+  componentDidMount() {
+    axios('/api/champions')
+    .then((data) => {
+      this.setState(data);
+    })
+  }
+  
+  render() {
+    return (
+      <div>
+        <NavBar/>
+        <GameCarousel/>
+        <GameMenu/>
+        <LeaderBoardNavs/>
+        <LeaderBoard caption="Overall Champions" data={this.state.overall} />
+        <LeaderBoard caption="Memory Champions" data={this.state.memory} />
+        <LeaderBoard caption="Math Champions" data={this.state.math} />
+        <LeaderBoard caption="Minesweeper Champions" data={this.state.minesweeper} />
+        <LeaderBoard caption="Trivia Champions" data={this.state.trivia} />
+        <MemoryLeaderBoard/>
+        <MathLeaderBoard/>
+        <MinesLeaderBoard/>
+        <TriviaLeaderBoard/>
+      </div>
+    );
+  }
 }
 
 export default Home;
