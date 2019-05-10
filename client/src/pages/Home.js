@@ -16,7 +16,7 @@ class Home extends React.Component {
       math: [],
       trivia: [],
       minesweeper: []
-    }
+    };
   }
   
   componentDidMount() {
@@ -38,10 +38,6 @@ class Home extends React.Component {
         <LeaderBoard caption="Math Champions" data={this.state.math} />
         <LeaderBoard caption="Minesweeper Champions" data={this.state.minesweeper} />
         <LeaderBoard caption="Trivia Champions" data={this.state.trivia} />
-        <MemoryLeaderBoard/>
-        <MathLeaderBoard/>
-        <MinesLeaderBoard/>
-        <TriviaLeaderBoard/>
       </div>
     );
   }
