@@ -5,6 +5,15 @@ function NavTabs() {
     return (
         <ul className="nav nav-tabs">
             <li className="nav-item">
+            <li className="nav-item">
+            <Link
+            to="/"
+            className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}
+          >
+            Home Page
+          </Link>
+            </li>
+            
             <Link
             to="/MathGame"
             className={window.location.pathname === "/MathGame" ? "nav-link active" : "nav-link"}
