@@ -10,9 +10,7 @@ import OverallLeaderBoard from "./components/OverallLeaderBoard";
 import MemoryLeaderBoard from "./components/MemoryLeaderBoard";
 import MathLeaderboard from "./components/MathLeaderBoard";
 import MinesLeaderboard from "./components/MinesLeaderBoard";
-
-
-
+import TriviaLeaderboard from "./components/TriviaLeaderBoard";
 
 function App() {
   return (
