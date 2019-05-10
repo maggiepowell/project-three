@@ -13,27 +13,15 @@ class MinesLeaderBoard extends Component {
     }
   }
 
+  
+
   // initialize data to grid
   componentDidMount() {
-    // set state and reflect that change through attribute mutation
-    this.setState(() => {
-      return {
-        "mines": [
-          {
-            "username": "user1",
-            "points": "10000"
-          },
-          {
-            "username": "user2",
-            "points": "10000"
-          },
-          {
-            "username": "user3",
-            "points": "10000"
-          }
-        ]
-      }
+    axios('/api/champions')
+    .then((response) => {
+      this.setState(response);
     });
+    // set state and reflect that change through attribute mutation
   }
 
   // We are using JSON.stringify because that is the proper way to pass an object to an attribute
