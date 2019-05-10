@@ -31,6 +31,15 @@ function NavTabs() {
           </Link>
             </li>
 
+            <li className="nav-item">
+            <Link
+            to="/Trivia"
+            className={window.location.pathname === "/Trivia" ? "nav-link active" : "nav-link"}
+          >
+            Trivia
+          </Link>
+            </li>
+
         </ul>
     );
 }
