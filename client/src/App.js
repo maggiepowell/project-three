@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
-import NavTabs from "./components/NavTabs";
+import NavTabs from "./NavTabs";
 import Home from "./pages/Home";
 import MathGame from "./pages/MathGame";
 import MemoryGame from "./pages/MemoryGame";
