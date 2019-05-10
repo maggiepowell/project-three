@@ -12,6 +12,15 @@ function NavTabs() {
             MathGame
           </Link>
             </li>
+            <li className="nav-item">
+            <Link
+            to="/MemoryGame"
+            className={window.location.pathname === "/MemoryGame" ? "nav-link active" : "nav-link"}
+          >
+            MemoryGame
+          </Link>
+            </li>
+
         </ul>
     );
 }
