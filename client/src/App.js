@@ -8,9 +8,9 @@ import MathGame from "./pages/MathGame";
 // import Trivia from "./pages/Trivia";
 import OverallLeaderBoard from "./components/OverallLeaderBoard";
 import MemoryLeaderBoard from "./components/MemoryLeaderBoard";
-import MathLeaderboard from "./components/MathLeaderBoard";
-import MinesLeaderboard from "./components/MinesLeaderBoard";
-import TriviaLeaderboard from "./components/TriviaLeaderBoard";
+import MathLeaderBoard from "./components/MathLeaderBoard";
+import MinesLeaderBoard from "./components/MinesLeaderBoard";
+import TriviaLeaderBoard from "./components/TriviaLeaderBoard";
 
 function App() {
   return (
@@ -22,6 +22,11 @@ function App() {
         {/* <Route exact path="/MemoryGame" component={MemoryGame}/>
         <Route exact path="/FieldNavGame" component={FieldNavGame}/>
         <Route exact path="/Trivia" component={Trivia}/> */}
+        <Route exact path="/OverallLeaderBoard" component={OverallLeaderBoard}/>
+        <Route exact path="/MemoryLeaderBoard" component={MemoryLeaderBoard}/>
+        <Route exact path="/MathLeaderBoard" component={MathLeaderBoard}/>
+        <Route exact path="/MinesLeaderBoard" component={MinesLeaderBoard}/>
+        <Route exact path="/TriviaLeaderBoard" component={TriviaLeaderBoard}/>
     </Router>
     </div>
   );
