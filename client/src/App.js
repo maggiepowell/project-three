@@ -9,6 +9,8 @@ import MathGame from "./pages/MathGame";
 import OverallLeaderBoard from "./components/OverallLeaderBoard";
 import MemoryLeaderBoard from "./components/MemoryLeaderBoard";
 import MathLeaderboard from "./components/MathLeaderBoard";
+import MinesLeaderboard from "./components/MinesLeaderBoard";
+
 
 
 
