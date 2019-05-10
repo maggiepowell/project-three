@@ -1,23 +1,24 @@
 import React from 'react';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import NavTabs from "./components/NavTabs";
 import Home from "./pages/Home";
 import MathGame from "./pages/MathGame";
 import MemoryGame from "./pages/MemoryGame";
 import FieldNavGame from "./pages/FieldNavGame";
 import Trivia from "./pages/Trivia";
-import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
+    <div>
     <Router>
-      <div>
-        <Route path="/" component={Home}/>
-        <Route path="/MathGame" component={MathGame}/>
-        <Route path="/MemoryGame" component={MemoryGame}/>
-        <Route path="/FieldNavGame" component={FieldNavGame}/>
-        <Route path="/Trivia" component={Trivia}/>
-      </div>
+      <NavTabs />
+      <Route exact path="/" component={Home}/>
+        <Route exact path="/MathGame" component={MathGame}/>
+        <Route exact path="/MemoryGame" component={MemoryGame}/>
+        <Route exact path="/FieldNavGame" component={FieldNavGame}/>
+        <Route exact path="/Trivia" component={Trivia}/>
     </Router>
-    
+    </div>
   );
 }
 
