@@ -1,28 +1,84 @@
-import React from "react";
+import React, { Component } from 'react';
 import "./style.css";
-import { Col } from "../Grid";
-import Logo from "../HomePageImages/logo.png"
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import { Navbar, Nav, Button } from 'react-bootstrap';
+// import auth0 from 'auth0-js';
 
-function NavBar() {
-
+class NavBar extends Component {
+  render() {
+    const { isAuthenticated, login, logout } = this.props;
     return (
-        <Navbar className="bg-dark">
-            <div className="container">
-                <Col size="sm-4">
-                    <Navbar.Brand href="#home"><img className="img-fluid" src={Logo} alt="logo"/></Navbar.Brand>
-                </Col>
-                <Col size="sm-8">
-                    <Nav className="float-right nav">
-                        <Nav.Link href="#">Games</Nav.Link>
-                        <Nav.Link href="#">Leader Boards</Nav.Link>
-                        <Nav.Link href="#home">Login</Nav.Link>
-                    </Nav>
-                </Col>
-            </div>
+      <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="home"><img className="img-fluid" src="../HomePageImages/logo.png" alt="logo"/></Navbar.Brand>
+          <Nav className="navbar">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#leaderboard">Leaderboard</Nav.Link>
+            <Nav.Link href="#contact">Contact Us</Nav.Link>
+          </Nav>
+          {
+            !isAuthenticated() && (
+                <Button
+                  id="qsLoginBtn"
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={login.bind(this)}
+                >
+                  Log In
+                </Button>
+              )
+          }
+          {
+            isAuthenticated() && (
+                <Button
+                  id="qsLogoutBtn"
+                  bsStyle="primary"
+                  className="btn-margin"
+                  onClick={logout.bind(this)}
+                >
+                  Log Out
+                </Button>
+              )
+          }
         </Navbar>
         );
-}
-
-export default NavBar;
+      }
+  }
+//  NavBar = () => {
+//     const { isAuthenticated } = this.props.auth;
+    // return (
+    // <Navbar bg="dark" variant="dark">
+    //     <Navbar.Brand href="home"><img className="img-fluid" src="../HomePageImages/logo.png" alt="logo"/></Navbar.Brand>
+    //     <Nav className="navbar">
+    //       <Nav.Link href="#home">Home</Nav.Link>
+    //       <Nav.Link href="#leaderboard">Leaderboard</Nav.Link>
+    //       <Nav.Link href="#contact">Contact Us</Nav.Link>
+    //     </Nav>
+    //     {
+    //       !isAuthenticated() && (
+    //           <Button
+    //             id="qsLoginBtn"
+    //             bsStyle="primary"
+    //             className="btn-margin"
+    //             onClick={this.login.bind(this)}
+    //           >
+    //             Log In
+    //           </Button>
+    //         )
+    //     }
+    //     {
+    //       isAuthenticated() && (
+    //           <Button
+    //             id="qsLogoutBtn"
+    //             bsStyle="primary"
+    //             className="btn-margin"
+    //             onClick={this.logout.bind(this)}
+    //           >
+    //             Log Out
+    //           </Button>
+    //         )
+    //     }
+    //   </Navbar>
+    //   );
+    // }
+// }
+    
+    export default NavBar;
