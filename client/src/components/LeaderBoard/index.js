@@ -12,7 +12,7 @@ class LeaderBoard extends Component {
       <Container>
         <Row>
           <Col size="sm-12">
-            <zing-grid className="leader-board" id="Leaderboard" caption={this.props.caption} data={JSON.stringify(this.props.data)} loading></zing-grid>
+            <zing-grid className="leader-board" id="Leaderboard" caption={this.props.caption} data={JSON.stringify(this.props.data)}></zing-grid>
           </Col>
         </Row>
       </Container>
