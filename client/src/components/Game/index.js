@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Number from "../Number/index.js";
 import MathGameModal from "../MathGameModal";
+import MathGameResultModal from "../MathGameResultModal"
 import { Col, Row, Container } from "../Grid";
 import _ from 'lodash';
 import "./style.css";
@@ -72,8 +73,9 @@ class Game extends Component {
             prevState.remainingSeconds - 1;
           if (newRemainingSeconds === 0) {
             clearInterval(this.intervalId);
-            console.log("done")
-            return { hasGameStarted: false, remainingSeconds: 60 };
+            this.showResults();
+            console.log("done");
+            return { hasGameStarted: false, remainingSeconds: 10 };
           }
           return { remainingSeconds: newRemainingSeconds };
         });
@@ -122,6 +124,9 @@ class Game extends Component {
     return (
       <div className="game-body">
         <MathGameModal
+          onClick={this.startTimer}
+        />
+        <MathGameResultModal
           onClick={this.startTimer}
         />
         <Container>

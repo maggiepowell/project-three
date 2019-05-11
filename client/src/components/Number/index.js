@@ -12,7 +12,7 @@ class Number extends Component {
             console.log(this.props.value);
         }
         else {
-            console.log("already selected");
+            console.log("already selected");    
         }
     };
 

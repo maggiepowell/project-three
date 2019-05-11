@@ -16,11 +16,11 @@ function Home() {
       <GameCarousel/>
       <GameMenu/>
       <LeaderBoardNavs/>
-      <OverallLeaderBoard/>
+      {/* <OverallLeaderBoard/>
       <MemoryLeaderBoard/>
       <MathLeaderBoard/>
       <MinesLeaderBoard/>
-      <TriviaLeaderBoard/>
+      <TriviaLeaderBoard/> */}
     </div>
     
   );

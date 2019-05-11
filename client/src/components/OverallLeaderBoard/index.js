@@ -9,7 +9,9 @@ class OverallLeaderBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      overall: []
+      overall: [],
+      visable: false
+      
     }
   }
 
@@ -41,13 +43,13 @@ class OverallLeaderBoard extends Component {
   // not want a string form of data in the DOM tied to an attribute
   render() {
     return (
-      <Container>
+      <div>
         <Row>
           <Col size="sm-12">
             <zing-grid className="leader-board" id="overallLeaderboard" caption="Overall Champions" data={JSON.stringify(this.state.overall)} loading></zing-grid>
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
