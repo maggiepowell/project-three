@@ -22,8 +22,8 @@ var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client"));
 }
 
 // Starting the server, syncing our models ------------------------------------/
