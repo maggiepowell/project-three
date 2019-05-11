@@ -70,6 +70,16 @@ class Quiz extends React.Component {
     );
   }
 
+  setUserAnswer(answer) {
+    this.setState((state) => ({
+      answersCount: {
+        ...state.answersCount,
+        [answer]: state.answersCount[answer] + 1
+      },
+      answer: answer
+    }));
+  }
+
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
     if (this.state.questionId < quizQuestions.length) {
