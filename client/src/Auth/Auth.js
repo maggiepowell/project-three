@@ -23,6 +23,10 @@ export default class Auth {
     this.renewSession = this.renewSession.bind(this);
   }
 
+  login() {
+    this.auth0.authorize();
+  }
+
   handleAuthentication() {
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {

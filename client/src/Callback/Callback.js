@@ -1,24 +1,25 @@
 import React, { Component } from 'react';
-import loading from './loading.svg';
+import NavBar from "../components/NavBar";
+import GameCarousel from "../components/GameCarousel";
+import GameMenu from "../components/GameMenu";
+import LeaderBoardNavs from "../components/LeaderBoardNavs";
+import LeaderBoard from "../components/LeaderBoard";
 
 class Callback extends Component {
   render() {
-    const style = {
-      position: 'absolute',
-      display: 'flex',
-      justifyContent: 'center',
-      height: '100vh',
-      width: '100vw',
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      backgroundColor: 'white',
-    }
 
     return (
-      <div style={style}>
-        <img src={loading} alt="loading"/>
+      <div>
+        <NavBar
+          isAuthenticated={this.isAuthenticated}
+          login={this.login}g
+          
+          logout={this.logout}
+        ></NavBar>
+        <GameCarousel></GameCarousel>
+        <GameMenu></GameMenu>
+        <LeaderBoardNavs></LeaderBoardNavs>
+        <LeaderBoard></LeaderBoard>
       </div>
     );
   }

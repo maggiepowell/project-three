@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ZingGrid from 'zinggrid';
 import { Container, Row, Col } from "../Grid";
-import "../OverallLeaderBoard/style.css"
+import "../LeaderBoard/style.css"
 
 class MathLeaderBoard extends Component {
 

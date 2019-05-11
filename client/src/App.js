@@ -1,18 +1,55 @@
-import React from "react";
+import React, { Component } from 'react';
+import './App.css';
 import NavBar from "./components/NavBar";
-import Home from "./pages/Home";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import GameCarousel from "./components/GameCarousel";
+import GameMenu from "./components/GameMenu";
+import LeaderBoardNavs from "./components/LeaderBoardNavs";
+import LeaderBoard from "./components/LeaderBoard";
 
 
-function App() {
-  return (
-    <Router>
+class App extends Component {
+
+  goTo = (route) => {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login = () => {
+    this.props.auth.login();
+  }
+
+  logout = () => {
+    this.props.auth.logout();
+  }
+
+  isAuthenticated = () => {
+    this.props.auth.isAuthenticated();
+  }
+
+
+
+  componentDidMount() {
+    const { renewSession } = this.props.auth;
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      renewSession();
+    }
+  }
+
+  render() {
+    return (
       <div>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/home" component={Home} />
-        </div>
-    </Router>
-  );
+        <NavBar
+          isAuthenticated={this.isAuthenticated}
+          login={this.login}
+          logout={this.logout}
+        ></NavBar>
+        <GameCarousel></GameCarousel>
+        <GameMenu></GameMenu>
+        <LeaderBoardNavs></LeaderBoardNavs>
+        <LeaderBoard></LeaderBoard>
+      </div>
+    );
+  }
 }
 
 export default App;

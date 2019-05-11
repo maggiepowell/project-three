@@ -3,22 +3,44 @@ import NavBar from '../components/NavBar';
 import GameCarousel from "../components/GameCarousel";
 import GameMenu from "../components/GameMenu";
 import LeaderBoardNavs from "../components/LeaderBoardNavs";
-import OverallLeaderBoard from "../components/OverallLeaderBoard";
-import MemoryLeaderBoard from "../components/MemoryLeaderBoard";
-import MathLeaderBoard from "../components/MathLeaderBoard";
-import MinesLeaderBoard from "../components/MinesLeaderBoard";
-import TriviaLeaderBoard from "../components/TriviaLeaderBoard"
+import LeaderBoard from "../components/LeaderBoard";
+import axios from 'axios';
 
-function Home() {
-  return (
-    <div>
-      <NavBar/>
-      <GameCarousel/>
-      <GameMenu/>
-      <LeaderBoardNavs/>
-    </div>
-    
-  );
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      leader: [],
+      memory: [],
+      math: [],
+      trivia: [],
+      minesweeper: []
+    };
+  }
+  
+  componentDidMount() {
+    axios('/api/champions')
+    .then((data) => {
+      this.setState(data);
+    })
+  }
+  
+  render() {
+    return (
+      <div>
+        <NavBar/>
+        <GameCarousel/>
+        <GameMenu/>
+        <LeaderBoardNavs/>
+        <LeaderBoard caption="Leader Board Champions" data={this.state.leader} />
+        <LeaderBoard caption="Memory Champions" data={this.state.memory} />
+        <LeaderBoard caption="Math Champions" data={this.state.math} />
+        <LeaderBoard caption="Minesweeper Champions" data={this.state.minesweeper} />
+        <LeaderBoard caption="Trivia Champions" data={this.state.trivia} />
+      </div>
+    );
+  }
 }
 
 export default Home;

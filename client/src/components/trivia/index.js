@@ -70,16 +70,47 @@ class Quiz extends React.Component {
     );
   }
 
+  setUserAnswer(answer) {
+    this.setState((state) => ({
+      answersCount: {
+        ...state.answersCount,
+        [answer]: state.answersCount[answer] + 1
+      },
+      answer: answer
+    }));
+  }
+
+  handleAnswerSelected(event) {
+    this.setUserAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+        setTimeout(() => this.setNextQuestion(), 300);
+      } else {
+        setTimeout(() => this.setResults(this.getResults()), 300);
+            }
+  }
+
+  setNextQuestion() {
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
+    this.setState({
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
+    });
+  }
+
   render() {
     return (
         <div className="quiz">
           <QuestionCount
-            counter={this.props.questionId}
-            total={this.props.questionTotal}
+            counter={this.state.questionId}
+            total={this.state.questionTotal}
           />
-          <Question content={this.props.question} />
+          <Question content={this.state.question} />
           <ul className="answerOptions">
-            {this.props.answerOptions.map(this.renderAnswerOptions)}
+            {this.state.answerOptions.map(this.renderAnswerOptions)}
           </ul>
         </div>
     );
