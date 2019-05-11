@@ -12,6 +12,7 @@ import MathGame from "./pages/MathGame";
 // import MinesLeaderBoard from "./components/MinesLeaderBoard";
 // import TriviaLeaderBoard from "./components/TriviaLeaderBoard";
 
+
 function App() {
   return (
     <div>
