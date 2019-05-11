@@ -1,9 +1,9 @@
 import React from 'react';
-import NavBar from '../Components/NavBar';
-import GameCarousel from "../Components/GameCarousel";
-import GameMenu from "../Components/GameMenu";
-import LeaderBoardNavs from "../Components/LeaderBoardNavs";
-import LeaderBoard from "../Components/LeaderBoard";
+import NavBar from '../components/NavBar';
+import GameCarousel from "../components/GameCarousel";
+import GameMenu from "../components/GameMenu";
+import LeaderBoardNavs from "../components/LeaderBoardNavs";
+import LeaderBoard from "../components/LeaderBoard";
 import axios from 'axios';
 
 class Home extends React.Component {

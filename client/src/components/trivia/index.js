@@ -93,12 +93,12 @@ class Quiz extends React.Component {
     return (
         <div className="quiz">
           <QuestionCount
-            counter={this.props.questionId}
-            total={this.props.questionTotal}
+            counter={this.state.questionId}
+            total={this.state.questionTotal}
           />
-          <Question content={this.props.question} />
+          <Question content={this.state.question} />
           <ul className="answerOptions">
-            {this.props.answerOptions.map(this.renderAnswerOptions)}
+            {this.state.answerOptions.map(this.renderAnswerOptions)}
           </ul>
         </div>
     );
