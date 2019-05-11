@@ -16,11 +16,6 @@ function Home() {
       <GameCarousel/>
       <GameMenu/>
       <LeaderBoardNavs/>
-      {/* <OverallLeaderBoard/>
-      <MemoryLeaderBoard/>
-      <MathLeaderBoard/>
-      <MinesLeaderBoard/>
-      <TriviaLeaderBoard/> */}
     </div>
     
   );

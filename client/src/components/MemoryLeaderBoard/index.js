@@ -10,7 +10,6 @@ class MemoryLeaderBoard extends Component {
     super(props);
     this.state = {
       overall: [],
-      visable: false
     }
   }
 

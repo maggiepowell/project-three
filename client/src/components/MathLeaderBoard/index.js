@@ -10,7 +10,6 @@ class MathLeaderBoard extends Component {
     super(props);
     this.state = {
       math: [],
-      visable: true
     }
   }
 
