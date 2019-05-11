@@ -9,7 +9,7 @@ class MemoryLeaderBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      overall: [],
+      leader: [],
     }
   }
 
