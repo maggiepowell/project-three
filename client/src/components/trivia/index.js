@@ -70,6 +70,15 @@ class Quiz extends React.Component {
     );
   }
 
+  handleAnswerSelected(event) {
+    this.setUserAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+        setTimeout(() => this.setNextQuestion(), 300);
+      } else {
+        // do nothing for now
+      }
+  }
+
   render() {
     return (
         <div className="quiz">
