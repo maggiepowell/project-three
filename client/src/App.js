@@ -4,7 +4,6 @@ import NavBar from "./components/NavBar";
 import GameCarousel from "./components/GameCarousel";
 import GameMenu from "./components/GameMenu";
 import LeaderBoardNavs from "./components/LeaderBoardNavs";
-import LeaderBoard from "./components/LeaderBoard";
 
 
 class App extends Component {
@@ -46,7 +45,6 @@ class App extends Component {
         <GameCarousel></GameCarousel>
         <GameMenu></GameMenu>
         <LeaderBoardNavs></LeaderBoardNavs>
-        <LeaderBoard></LeaderBoard>
       </div>
     );
   }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Nav from 'react-bootstrap/Nav';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
-import OverallLeaderBoard from "../OverallLeaderBoard";
+import Leaderboard from "../LeaderBoard"
 import MathLeaderBoard from "../MathLeaderBoard";
 import MemoryLeaderBoard from "../MemoryLeaderBoard";
 import MinesLeaderBoard from "../MinesLeaderBoard";
@@ -27,7 +27,7 @@ class LeaderBoardNavs extends Component {
                     </TabList>
 
                     <TabPanel>
-                        <OverallLeaderBoard/>
+                        <Leaderboard/>
                     </TabPanel>
                     <TabPanel>
                         <MemoryLeaderBoard/>
