@@ -1,0 +1,22 @@
+.game-body {
+    background-image: url("../HomePageImages/mathgame-wallpaper.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    padding-top: 2rem; 
+    width: 100%;
+    height: -webkit-fill-available;
+}
+
+.game-container {
+    background-color: rgba(255,255,255, 0.85);
+    border-radius: 4px;
+    padding: 15px; 
+}
+
+.target {
+    background-image: url("../HomePageImages/number-background.png");
+    background-size: 100% 100%;
+    border: none; 
+    margin-bottom: 1rem; 
+    color: #F2F2F0;
+}

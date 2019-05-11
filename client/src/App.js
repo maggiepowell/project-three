@@ -5,10 +5,7 @@ import GameCarousel from "./components/GameCarousel";
 import GameMenu from "./components/GameMenu";
 import LeaderBoardNavs from "./components/LeaderBoardNavs";
 import LeaderBoard from "./components/LeaderBoard";
-import MemoryLeaderBoard from "./components/MemoryLeaderBoard";
-import MathLeaderBoard from "./components/MathLeaderBoard";
-import MinesLeaderBoard from "./components/MinesLeaderBoard";
-import TriviaLeaderBoard from "./components/TriviaLeaderBoard"
+
 
 class App extends Component {
 
