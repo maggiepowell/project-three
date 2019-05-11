@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ZingGrid from 'zinggrid';
 import { Container, Row, Col } from "../Grid";
-import "../OverallLeaderBoard/style.css"
+import "../LeaderBoard/style.css"
 
 class TriviaLeaderBoard extends Component {
 
@@ -9,7 +9,7 @@ class TriviaLeaderBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      overall: []
+      leader: []
     }
   }
 

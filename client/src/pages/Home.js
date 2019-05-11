@@ -11,7 +11,7 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      overall: [],
+      leader: [],
       memory: [],
       math: [],
       trivia: [],
@@ -33,7 +33,7 @@ class Home extends React.Component {
         <GameCarousel/>
         <GameMenu/>
         <LeaderBoardNavs/>
-        <LeaderBoard caption="Overall Champions" data={this.state.overall} />
+        <LeaderBoard caption="Leader Board Champions" data={this.state.leader} />
         <LeaderBoard caption="Memory Champions" data={this.state.memory} />
         <LeaderBoard caption="Math Champions" data={this.state.math} />
         <LeaderBoard caption="Minesweeper Champions" data={this.state.minesweeper} />

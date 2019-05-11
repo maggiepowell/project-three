@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
         "Profiles",
         {
             username: DataTypes.STRING,
-            overall_score: DataTypes.INTERGER,
+            leader_score: DataTypes.INTERGER,
             score_memory: DataTypes.INTERGER,
             score_trivia: DataTypes.INTERGER,
             score_minesweeper: DataTypes.INTERGER,

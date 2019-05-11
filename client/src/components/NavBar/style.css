@@ -9,3 +9,10 @@ nav.bg-dark.navbar.navbar-expand.navbar-light {
 .navbar-light .navbar-nav .nav-link {
     color: #F2F2F0 !important;
 }
+.navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+.navbar-brand>img {
+padding: 7px;
+}

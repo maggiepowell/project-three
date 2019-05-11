@@ -1,36 +1,58 @@
-import React from 'react';
-import { Route, BrowserRouter as Router } from 'react-router-dom';
-import NavTabs from "./NavTabs";
-import Home from "./pages/Home";
-import MathGame from "./pages/MathGame";
-// import MemoryGame from "./pages/MemoryGame";
-// import FieldNavGame from "./pages/FieldNavGame";
-import Trivia from "./pages/Trivia";
-// import OverallLeaderBoard from "./components/OverallLeaderBoard";
-// import MemoryLeaderBoard from "./components/MemoryLeaderBoard";
-// import MathLeaderBoard from "./components/MathLeaderBoard";
-// import MinesLeaderBoard from "./components/MinesLeaderBoard";
-// import TriviaLeaderBoard from "./components/TriviaLeaderBoard";
+import React, { Component } from 'react';
+import './App.css';
+import NavBar from "./components/NavBar";
+import GameCarousel from "./components/GameCarousel";
+import GameMenu from "./components/GameMenu";
+import LeaderBoardNavs from "./components/LeaderBoardNavs";
+import LeaderBoard from "./components/LeaderBoard";
+import MemoryLeaderBoard from "./components/MemoryLeaderBoard";
+import MathLeaderBoard from "./components/MathLeaderBoard";
+import MinesLeaderBoard from "./components/MinesLeaderBoard";
+import TriviaLeaderBoard from "./components/TriviaLeaderBoard"
+
+class App extends Component {
+
+  goTo = (route) => {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login = () => {
+    this.props.auth.login();
+  }
+
+  logout = () => {
+    this.props.auth.logout();
+  }
+
+  isAuthenticated = () => {
+    this.props.auth.isAuthenticated();
+  }
 
 
-function App() {
-  return (
-    <div>
-    <Router>
-      <NavTabs />
-      <Route exact path="/" component={Home}/>
-        <Route exact path="/MathGame" component={MathGame}/>
-        {/* <Route exact path="/MemoryGame" component={MemoryGame}/>
-        <Route exact path="/FieldNavGame" component={FieldNavGame}/>*/}
-        <Route exact path="/Trivia" component={Trivia}/> 
-        {/* <Route exact path="/OverallLeaderBoard" component={OverallLeaderBoard}/>
-        <Route exact path="/MemoryLeaderBoard" component={MemoryLeaderBoard}/>
-        <Route exact path="/MathLeaderBoard" component={MathLeaderBoard}/>
-        <Route exact path="/MinesLeaderBoard" component={MinesLeaderBoard}/>
-        <Route exact path="/TriviaLeaderBoard" component={TriviaLeaderBoard}/> */}
-    </Router>
-    </div>
-  );
+
+  componentDidMount() {
+    const { renewSession } = this.props.auth;
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      renewSession();
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <NavBar
+          isAuthenticated={this.isAuthenticated}
+          login={this.login}
+          logout={this.logout}
+        ></NavBar>
+        <GameCarousel></GameCarousel>
+        <GameMenu></GameMenu>
+        <LeaderBoardNavs></LeaderBoardNavs>
+        <LeaderBoard></LeaderBoard>
+      </div>
+    );
+  }
 }
 
 export default App;
