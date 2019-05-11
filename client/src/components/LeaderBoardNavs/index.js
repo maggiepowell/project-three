@@ -8,7 +8,7 @@ function LeaderBoardNavs() {
             <Container>
                 <Nav justify variant="tabs" defaultActiveKey="/home">
                     <Nav.Item>
-                        <Nav.Link href="/home">Overall</Nav.Link>
+                        <Nav.Link href="/home">Leader Board</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link eventKey="link-1">Memory Lane</Nav.Link>

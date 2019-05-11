@@ -1,6 +1,6 @@
 USE wannagetajob_db;
 
-INSERT INTO Profiles (username, overall_score, score_memory, score_trivia, score_minesweeper, score_math)
+INSERT INTO Profiles (username, leader_score, score_memory, score_trivia, score_minesweeper, score_math)
 
 VALUES ("playerone", 400, 100, 100, 100, 100),
 ("playertwo", 600, 150, 150, 150, 150),

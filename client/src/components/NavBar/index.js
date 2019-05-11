@@ -2,17 +2,24 @@ import React, { Component } from 'react';
 import "./style.css";
 import { Navbar, Nav, Button } from 'react-bootstrap';
 // import auth0 from 'auth0-js';
+import Logo from "../HomePageImages/logo.png" 
 
 class NavBar extends Component {
   render() {
     const { isAuthenticated, login, logout } = this.props;
     return (
       <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="home"><img className="img-fluid" src="../HomePageImages/logo.png" alt="logo"/></Navbar.Brand>
+          <Navbar.Brand href="home">
+            <img src={Logo}
+            alt="logo" 
+            width="30"
+            height="30"
+            className="d-inline-block align-top"/>
+          </Navbar.Brand>
           <Nav className="navbar">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#leaderboard">Leaderboard</Nav.Link>
-            <Nav.Link href="#contact">Contact Us</Nav.Link>
+            <Nav.Link href="home">Home</Nav.Link>
+            <Nav.Link href="leaderboard">Leaderboard</Nav.Link>
+            <Nav.Link href="contact">Contact Us</Nav.Link>
           </Nav>
           {
             !isAuthenticated() && (
