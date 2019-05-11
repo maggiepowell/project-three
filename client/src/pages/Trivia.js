@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Quiz from "../components/trivia";
-import Results from "../components/trivia";
+import Result from "../components/trivia";
 
 class Trivia extends Component {
 
