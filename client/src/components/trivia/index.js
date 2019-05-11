@@ -89,6 +89,23 @@ class Quiz extends React.Component {
             }
   }
 
+  getResults() {
+    const answersCount = this.state.answersCount;
+    const answersCountKeys = Object.keys(answersCount);
+    const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+  
+    return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+  }
+
+  setResults (result) {
+    if (result.length === 1) {
+      this.setState({ result: result[0] });
+    } else {
+      this.setState({ result: 'Undetermined' });
+    }
+  }
+
   setNextQuestion() {
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;

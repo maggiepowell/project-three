@@ -15,7 +15,7 @@ module.exports = function (app) {
         console.log(req.body);
         db.Profiles.create({
             username: DataTypes.STRING,
-            overall_score: DataTypes.INTERGER,
+            leader_score: DataTypes.INTERGER,
             score_memory: DataTypes.INTERGER,
             score_trivia: DataTypes.INTERGER,
             score_minesweeper: DataTypes.INTERGER,
@@ -27,15 +27,15 @@ module.exports = function (app) {
 
     // Returns top scores for all games
     app.get("/api/champions", function(req, res) {
-        const overallPromise = Project.findAll({
+        const leaderPromise = Project.findAll({
             limit: 10,
             where: {
-                overall_score :{
+                leader_score :{
                     [Op.gte]: 0
                 }
             },
             order: [
-                ['overall_score', 'DESC']
+                ['leader_score', 'DESC']
             ]
         })
         const memoryPromise = Project.findAll({
@@ -83,10 +83,10 @@ module.exports = function (app) {
             ]
         })
         
-        Promise.all([overallPromise, memoryPromise, mathPromise, seekerPromise, triviaPromise])
+        Promise.all([leaderPromise, memoryPromise, mathPromise, seekerPromise, triviaPromise])
         .then((results) => {
             res.json({
-                overall: results[0],
+                leader: results[0],
                 memory: results[1],
                 math: results[2],
                 minesweeper: results[3],
