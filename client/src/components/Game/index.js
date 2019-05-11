@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Number from "../Number/index.js";
-import { Col, Row, Container } from "../Grid"
+import MathGameModal from "../MathGameModal";
+import MathGameResultModal from "../MathGameResultModal"
+import { Col, Row, Container } from "../Grid";
 import _ from 'lodash';
 import "./style.css";
 
@@ -25,7 +27,7 @@ class Game extends Component {
   }
 
   state = {
-      isGameDone: false,
+      hasGameStarted: false,
       remainingSeconds: this.props.initialSeconds,
       selectedIds: [],
       target: 0,
@@ -42,10 +44,12 @@ class Game extends Component {
     let numbers = this.getChallengeNumbers();
     let target = this.getTargetNumber(numbers);
     this.setState({
+      hasGameStarted: true,
       target: target,
       challengeNumbers: numbers,
       selectedIds: []
     })
+    console.log(numbers)
   }
 
   isNumberAvailable = numberIndex => 
@@ -54,25 +58,24 @@ class Game extends Component {
 
   selectNumber = numberIndex => {
     var selectedIds = this.state.selectedIds;
-  
-    if (selectedIds.length !== this.props.answerSize) {
-      selectedIds.push(numberIndex);
-      console.log(selectedIds);
-    }
-    else {
+    selectedIds.push(numberIndex);
+    console.log(selectedIds);
+
+    if (selectedIds.length === this.props.answerSize) {
       this.winOrLoss(selectedIds);
     }
   }
   
-  startGame = () => {
+  startTimer = () => {
       this.intervalId = setInterval(() => {
         this.setState(prevState => {
           const newRemainingSeconds =
             prevState.remainingSeconds - 1;
           if (newRemainingSeconds === 0) {
             clearInterval(this.intervalId);
-            console.log("done")
-            return { isGameDone: true, remainingSeconds: 60 };
+            this.showResults();
+            console.log("done");
+            return { hasGameStarted: false, remainingSeconds: 10 };
           }
           return { remainingSeconds: newRemainingSeconds };
         });
@@ -80,12 +83,15 @@ class Game extends Component {
   };
 
   winOrLoss = selectedIds => {
+
     const sumSelected = selectedIds.reduce(
       (acc, curr) => acc + this.state.challengeNumbers[curr],
       0
     );
 
-    if (sumSelected === this.target) {
+    console.log(this.state.target);
+
+    if (sumSelected === this.state.target) {
       console.log(sumSelected)
       this.handleWin();
   
@@ -117,55 +123,56 @@ class Game extends Component {
     const { remainingSeconds } = this.state;
     return (
       <div className="game-body">
-        <Container className="game-container">
-          <Row>
-            <Col size="sm-12">
-              <div className="help text-center">
-                  Instructions here
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col size="sm-3"></Col>
-            <Col size="sm-6">
-              <div className="card">
-                <div className="card-body">
+        <MathGameModal
+          onClick={this.startTimer}
+        />
+        <MathGameResultModal
+          onClick={this.startTimer}
+        />
+        <Container>
+          <div className="game-container">
+            <Row>
+              <Col size="sm-12">
+                <h1 className="text-center">
+                    Target Number: 
+                </h1>
+              </Col>
+            </Row>
+            <Row>
+              <Col size="sm-3"></Col>
+              <Col size="sm-6">
                   <h1 className="target text-center">{this.state.target}</h1>
-                </div>
+              </Col>
+              <Col size="sm-3"></Col>
+            </Row>
+              <div className="challenge-numbers">
+                <Row>
+                {this.state.challengeNumbers.map((value, index) =>
+                  <Number 
+                    key={index}
+                    id={index} 
+                    value={value}
+                    clickable={this.isNumberAvailable(index)}
+                    onClick={this.selectNumber} />
+                )}
+                </Row>
               </div>
-            </Col>
-            <Col size="sm-3"></Col>
-          </Row>
-            <div className="challenge-numbers">
-              <Row>
-              {this.state.challengeNumbers.map((value, index) =>
-                <Number 
-                  key={index}
-                  id={index} 
-                  value={value}
-                  clickable={this.isNumberAvailable(index)}
-                  onClick={this.selectNumber} />
-              )}
-              </Row>
-            </div>
-          <Row>
-            <Col size="sm-6">
-              <div className="timer">{remainingSeconds}</div>
-            </Col>
-            <Col size="sm-6">
-              <button onClick={this.startGame}>Start</button>
-            </Col>
-          </Row>  
-          <Row>
-            <Col size="sm-6">
-              <h4 className="text-center">Wins: {this.state.wins}</h4>
-              <h4 className="text-center">Losses: {this.state.losses}</h4>
-            </Col>
-          </Row>  
+            <Row>
+              <Col size="sm-12">
+                <div className="timer">{remainingSeconds}</div>
+              </Col>
+            </Row>
+            <Row>
+              <Col size="sm-6">
+                <h4 className="text-center">Wins: {this.state.wins}</h4>
+                <h4 className="text-center">Losses: {this.state.losses}</h4>
+              </Col>
+            </Row>  
+          </div>
         </Container>
       </div>
     );
   }
 }
 
-export default Game 
+export default Game;

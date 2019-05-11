@@ -85,8 +85,8 @@ class Quiz extends React.Component {
     if (this.state.questionId < quizQuestions.length) {
         setTimeout(() => this.setNextQuestion(), 300);
       } else {
-        // do nothing for now
-      }
+        setTimeout(() => this.setResults(this.getResults()), 300);
+            }
   }
 
   setNextQuestion() {

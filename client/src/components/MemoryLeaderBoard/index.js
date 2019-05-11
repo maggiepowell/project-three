@@ -9,7 +9,7 @@ class MemoryLeaderBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leader: []
+      overall: [],
     }
   }
 
@@ -41,13 +41,13 @@ class MemoryLeaderBoard extends Component {
   // not want a string form of data in the DOM tied to an attribute
   render() {
     return (
-      <Container>
+      <div>
         <Row>
           <Col size="sm-12">
             <zing-grid id="MemoryLeaderBoard" caption="Memory Champions" data={JSON.stringify(this.state.memory)} loading></zing-grid>
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }

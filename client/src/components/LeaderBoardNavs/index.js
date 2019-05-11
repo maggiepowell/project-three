@@ -1,31 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 import Nav from 'react-bootstrap/Nav';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import "react-tabs/style/react-tabs.css";
+import OverallLeaderBoard from "../OverallLeaderBoard";
+import MathLeaderBoard from "../MathLeaderBoard";
+import MemoryLeaderBoard from "../MemoryLeaderBoard";
+import MinesLeaderBoard from "../MinesLeaderBoard";
+import TriviaLeaderBoard from "../TriviaLeaderBoard";
 import { Container } from "../Grid";
 
-function LeaderBoardNavs() {
+
+
+class LeaderBoardNavs extends Component {
+
+    render() {
     return (
         <div>
             <Container>
-                <Nav justify variant="tabs" defaultActiveKey="/home">
-                    <Nav.Item>
-                        <Nav.Link href="/home">Leader Board</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-1">Memory Lane</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-2">Math Sprint</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-3">Field Navigator</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link eventKey="link-4">Quiz Bowl</Nav.Link>
-                    </Nav.Item>
-                </Nav>
+                <Tabs>
+                    <TabList>
+                        <Tab>Overall Leaderboard</Tab>
+                        <Tab>Memory Leaderboard</Tab>
+                        <Tab>Math Leaderboard</Tab>
+                        <Tab>Sweeper Leaderboard</Tab>
+                        <Tab>Quiz Leaderboard</Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <OverallLeaderBoard/>
+                    </TabPanel>
+                    <TabPanel>
+                        <MemoryLeaderBoard/>
+                    </TabPanel>
+                    <TabPanel>
+                        <MathLeaderBoard/>
+                    </TabPanel>
+                    <TabPanel>
+                        <MinesLeaderBoard/>
+                    </TabPanel>
+                    <TabPanel>
+                        <TriviaLeaderBoard/>
+                    </TabPanel>
+                </Tabs>
             </Container>
         </div>
     );
+
+    }
 };
 
 export default LeaderBoardNavs; 

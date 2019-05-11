@@ -24,7 +24,7 @@ class GameCarousel extends React.Component {
 
     return(
       <div className="bg-color">
-        <div class="container">
+        <div className="container">
             <Swiper {...params}>
                 <div className="swiper-slide" id="addition-game"></div>
                 <div className="swiper-slide" id="minesweeper-game"></div>

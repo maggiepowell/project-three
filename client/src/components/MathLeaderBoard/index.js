@@ -9,7 +9,7 @@ class MathLeaderBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      leader: []
+      math: [],
     }
   }
 
@@ -41,13 +41,13 @@ class MathLeaderBoard extends Component {
   // not want a string form of data in the DOM tied to an attribute
   render() {
     return (
-      <Container>
+      <div>
         <Row>
           <Col size="sm-12">
             <zing-grid id="MathLeaderBoard" caption="Math Champions" data={JSON.stringify(this.state.math)} loading></zing-grid>
           </Col>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
