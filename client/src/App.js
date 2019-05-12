@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from "./components/NavBar";
-import GameCarousel from "./components/GameCarousel";
-import GameMenu from "./components/GameMenu";
-import LeaderBoardNavs from "./components/LeaderBoardNavs";
-
+import MathGame from "./pages/MathGame";
+import Home from "./pages/Home";
 
 class App extends Component {
 
@@ -24,8 +22,6 @@ class App extends Component {
     this.props.auth.isAuthenticated();
   }
 
-
-
   componentDidMount() {
     const { renewSession } = this.props.auth;
 
@@ -42,12 +38,11 @@ class App extends Component {
           login={this.login}
           logout={this.logout}
         ></NavBar>
-        <GameCarousel></GameCarousel>
-        <GameMenu></GameMenu>
-        <LeaderBoardNavs></LeaderBoardNavs>
+        <Home></Home>
       </div>
     );
   }
+
 }
 
 export default App;

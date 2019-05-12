@@ -4,7 +4,7 @@ import GameCarousel from "../components/GameCarousel";
 import GameMenu from "../components/GameMenu";
 import LeaderBoardNavs from "../components/LeaderBoardNavs";
 import LeaderBoard from "../components/LeaderBoard";
-import axios from 'axios';
+//import axios from 'axios';
 
 class Home extends React.Component {
   constructor(props) {
@@ -19,25 +19,21 @@ class Home extends React.Component {
     };
   }
   
+  /*
   componentDidMount() {
-    axios('/api/champions')
+    .axios('/api/champions')
     .then((data) => {
       this.setState(data);
     })
   }
+  */
   
   render() {
     return (
       <div>
-        <NavBar/>
         <GameCarousel/>
         <GameMenu/>
         <LeaderBoardNavs/>
-        <LeaderBoard caption="Leader Board Champions" data={this.state.leader} />
-        <LeaderBoard caption="Memory Champions" data={this.state.memory} />
-        <LeaderBoard caption="Math Champions" data={this.state.math} />
-        <LeaderBoard caption="Minesweeper Champions" data={this.state.minesweeper} />
-        <LeaderBoard caption="Trivia Champions" data={this.state.trivia} />
       </div>
     );
   }

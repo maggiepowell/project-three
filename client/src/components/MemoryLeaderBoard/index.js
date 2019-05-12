@@ -9,7 +9,7 @@ class MemoryLeaderBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      overall: [],
+      leader: [],
     }
   }
 
@@ -44,7 +44,7 @@ class MemoryLeaderBoard extends Component {
       <div>
         <Row>
           <Col size="sm-12">
-            <zing-grid id="MemoryLeaderBoard" caption="Memory Champions" data={JSON.stringify(this.state.memory)} loading></zing-grid>
+            <zing-grid id="MemoryLeaderBoard" data={JSON.stringify(this.state.memory)} loading></zing-grid>
           </Col>
         </Row>
       </div>

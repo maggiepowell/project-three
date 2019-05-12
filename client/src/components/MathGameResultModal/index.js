@@ -33,6 +33,7 @@ class MathGameResultModal extends React.Component {
             center={false}
             showCloseIcon={false}
             closeOnOverlayClick={false}
+            showResults={this.onOpenModal}
         >
           <h2>Time's up!</h2>
           <p>You Scored (number)</p>

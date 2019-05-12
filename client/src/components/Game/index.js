@@ -119,6 +119,10 @@ class Game extends Component {
     this.resetGame();
   }
 
+  showResults = () => {
+    console.log('here');
+  }
+
   render() {
     const { remainingSeconds } = this.state;
     return (

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Nav from 'react-bootstrap/Nav';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tabs, Tab } from 'react-bootstrap-tabs';
 import "react-tabs/style/react-tabs.css";
-import Leaderboard from "../LeaderBoard"
+import LeaderBoard from "../LeaderBoard";
+import ReactDOM from 'react-dom';
 import MathLeaderBoard from "../MathLeaderBoard";
 import MemoryLeaderBoard from "../MemoryLeaderBoard";
 import MinesLeaderBoard from "../MinesLeaderBoard";
@@ -17,30 +17,9 @@ class LeaderBoardNavs extends Component {
     return (
         <div>
             <Container>
-                <Tabs>
-                    <TabList>
-                        <Tab>Overall Leaderboard</Tab>
-                        <Tab>Memory Leaderboard</Tab>
-                        <Tab>Math Leaderboard</Tab>
-                        <Tab>Sweeper Leaderboard</Tab>
-                        <Tab>Quiz Leaderboard</Tab>
-                    </TabList>
-
-                    <TabPanel>
-                        <Leaderboard/>
-                    </TabPanel>
-                    <TabPanel>
-                        <MemoryLeaderBoard/>
-                    </TabPanel>
-                    <TabPanel>
-                        <MathLeaderBoard/>
-                    </TabPanel>
-                    <TabPanel>
-                        <MinesLeaderBoard/>
-                    </TabPanel>
-                    <TabPanel>
-                        <TriviaLeaderBoard/>
-                    </TabPanel>
+                <Tabs id="leaderboard-navs"a>
+                    <Tab eventKey="leaderboard" label="LeaderBoard"><LeaderBoard /></Tab>
+                    <Tab eventKey="mathboard" label="Math LeaderBoard"><MathLeaderBoard /></Tab>
                 </Tabs>
             </Container>
         </div>
@@ -49,5 +28,5 @@ class LeaderBoardNavs extends Component {
     }
 };
 
-export default LeaderBoardNavs; 
+export default LeaderBoardNavs;
 
