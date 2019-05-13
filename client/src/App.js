@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import NavTabs from "./NavTabs";
 import NavBar from "./components/NavBar";
 import GameCarousel from "./components/GameCarousel";
 import GameMenu from "./components/GameMenu";
