@@ -1,8 +1,6 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeRoutes } from './routes';
 
-let routes = makeRoutes();
 ReactDOM.render(makeRoutes(), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
