@@ -21,15 +21,15 @@ class MinesLeaderBoard extends Component {
         "overall": [
           {
             "username": "user1",
-            "points": "10000"
+            "points": "300"
           },
           {
             "username": "user2",
-            "points": "10000"
+            "points": "300"
           },
           {
             "username": "user3",
-            "points": "10000"
+            "points": "300"
           }
         ]
       }

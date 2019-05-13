@@ -2,12 +2,16 @@
     background-color: #8C0B23 !important;
 }
 
-nav.bg-dark.navbar.navbar-expand.navbar-light {
+nav.navbar.navbar-expand.navbar-dark.bg-dark {
     padding: 0px;
 }
 
+a.nav-link {
+    padding: 13px 0px 0px 0px
+}
+
 .log-button {
-    padding: 0px;
+    padding: 13px 0px 0px 0px;
     margin-left: 10px;
     background: 0;
     border: none !important;
@@ -15,6 +19,7 @@ nav.bg-dark.navbar.navbar-expand.navbar-light {
 .navbar-light .navbar-nav .nav-link {
     color: #F2F2F0 !important;
 }
+
 
 
 

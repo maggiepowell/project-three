@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../components/NavBar';
 import GameCarousel from "../components/GameCarousel";
 import GameMenu from "../components/GameMenu";
-import LeaderBoardNavs from "../components/LeaderBoardNavs";
+import LeaderBoardContainer from "../components/LeaderBoardContainer";
 import LeaderBoard from "../components/LeaderBoard";
 //import axios from 'axios';
 
@@ -33,7 +33,7 @@ class Home extends React.Component {
       <div>
         <GameCarousel/>
         <GameMenu/>
-        <LeaderBoardNavs/>
+        <LeaderBoardContainer/>
       </div>
     );
   }

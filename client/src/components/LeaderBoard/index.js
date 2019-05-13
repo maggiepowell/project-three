@@ -20,15 +20,15 @@ class LeaderBoard extends Component {
         "overall": [
           {
             "username": "user1",
-            "points": "10000"
+            "points": "4000"
           },
           {
             "username": "user2",
-            "points": "10000"
+            "points": "4000"
           },
           {
             "username": "user3",
-            "points": "10000"
+            "points": "4000"
           }
         ]
       }

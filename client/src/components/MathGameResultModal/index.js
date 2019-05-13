@@ -5,7 +5,7 @@ import "./style.css"
 class MathGameResultModal extends React.Component {
     
   state = {
-    open: false,
+    open: true,
   };
  
   onOpenModal = () => {
@@ -22,21 +22,25 @@ class MathGameResultModal extends React.Component {
       this.props.onClick();
       console.log("clicked!");
   }
+
+  getScore = () => {
+    this.props.getScore();
+  }
+
  
   render() {
+    const { open } = this.state;
     return (
       <div>
         <Modal 
-            modalId="modal"
+            modalId="resultsModal"
+            open={open}
             onClose={this.onCloseModal} 
-            open={false}
             center={false}
             showCloseIcon={false}
             closeOnOverlayClick={false}
-            showResults={this.onOpenModal}
         >
           <h2>Time's up!</h2>
-          <p>You Scored (number)</p>
           <button onClick={this.handleClick}>Play Again</button>
         </Modal>
       </div>

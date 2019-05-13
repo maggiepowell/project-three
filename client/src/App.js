@@ -38,7 +38,7 @@ class App extends Component {
           login={this.login}
           logout={this.logout}
         ></NavBar>
-        <Home></Home>
+        <MathGame></MathGame>
       </div>
     );
   }
