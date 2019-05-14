@@ -1,0 +1,13 @@
+.leaderboard-container {
+    margin-top: 1.5rem;
+}
+
+.leader-nav.nav-item {
+    padding: 0px;
+    border: 1px solid #dee2e6;
+}
+
+a.nav-link{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

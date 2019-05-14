@@ -4,52 +4,54 @@ import MathLeaderBoard from "../MathLeaderBoard";
 import MemoryLeaderBoard from "../MemoryLeaderBoard";
 import MinesLeaderBoard from "../MinesLeaderBoard";
 import TriviaLeaderBoard from "../TriviaLeaderBoard";
+import Nav from 'react-bootstrap/Nav'
 import { Container } from "../Grid";
+import "./style.css"
 
 function LeaderBoardNavTabs(props) {
 return (
-    <ul className="nav nav-tabs">
-    <li className="nav-item">
-        <button
-          onClick={() => props.handleComponentChange("LeaderBoard")}
-          className={props.currentPage === "LeaderBoard" ? "nav-link active" : "nav-link"}
-        >
-          Overall Leaderboard
-        </button>
-      </li>
-      <li className="nav-item">
-        <button
-          onClick={() => props.handleComponentChange("MemoryLeaderBoard")}
-          className={props.currentPage === "MemoryLeaderBoard" ? "nav-link active" : "nav-link"}
-        >
-          Memory Leaderboard
-        </button>
-      </li>
-      <li className="nav-item">
-        <button
-          onClick={() => props.handleComponentChange("MathLeaderBoard")}
-          className={props.currentPage === "MathLeaderBoard" ? "nav-link active" : "nav-link"}
-        >
-          Math Leaderboard
-        </button>
-      </li>
-      <li className="nav-item">
-        <button
-          onClick={() => props.handleComponentChange("MinesLeaderBoard")}
-          className={props.currentPage === "MinesLeaderBoard" ? "nav-link active" : "nav-link"}
-        >
-          Mines Leaderboard
-        </button>
-      </li>
-      <li className="nav-item">
-        <button
-          onClick={() => props.handleComponentChange("TriviaLeaderBoard")}
-          className={props.currentPage === "TriviaLeaderBoard" ? "nav-link active" : "nav-link"}
-        >
-          Trivia Leaderboard
-        </button>
-      </li>
-    </ul>
+    <Nav justify variant="tabs" defaultActiveKey="/LeaderBoard">
+      <Nav.Item className="leader-nav">
+          <Nav.Link
+            onClick={() => props.handleComponentChange("LeaderBoard")}
+            className={props.currentPage === "LeaderBoard" ? "Nav.Link active" : "Nav.Link"}
+          >
+            Overall Champions
+          </Nav.Link>
+      </Nav.Item>
+      <Nav.Item className="leader-nav">
+          <Nav.Link
+            onClick={() => props.handleComponentChange("MemoryLeaderBoard")}
+            className={props.currentPage === "MemoryLeaderBoard" ? "Nav.Link active" : "Nav.Link"}
+          >
+            Memory Champions
+          </Nav.Link>
+      </Nav.Item>
+      <Nav.Item className="leader-nav">
+          <Nav.Link
+            onClick={() => props.handleComponentChange("MathLeaderBoard")}
+            className={props.currentPage === "MathLeaderBoard" ? "Nav.Link active" : "Nav."}
+          >
+            Math Champions
+          </Nav.Link>
+      </Nav.Item>
+      <Nav.Item className="leader-nav">
+          <Nav.Link
+            onClick={() => props.handleComponentChange("MinesLeaderBoard")}
+            className={props.currentPage === "MinesLeaderBoard" ? "nav-link active" : "nav-link"}
+          >
+            Mines Champions
+          </Nav.Link>
+      </Nav.Item>
+      <Nav.Item className="leader-nav">
+          <Nav.Link
+            onClick={() => props.handleComponentChange("TriviaLeaderBoard")}
+            className={props.currentPage === "TriviaLeaderBoard" ? "nav-link active" : "nav-link"}
+          >
+            Trivia Champions
+          </Nav.Link>
+      </Nav.Item>
+    </Nav>
   );
 
 }
@@ -80,13 +82,13 @@ class LeaderBoardContainer extends Component {
 
     render() {
         return (
-            <Container>
+            <div className="container leaderboard-container">
                 <LeaderBoardNavTabs
                     currentComponent={this.state.currentComponent}
                     handleComponentChange={this.handleComponentChange}
                 />
                 {this.renderComponent()}
-            </Container>
+            </div>
         );
     }
 

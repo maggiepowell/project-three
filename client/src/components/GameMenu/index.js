@@ -7,16 +7,19 @@ import MemoryIcon from "../HomePageImages/memory-icon.png";
 import TriviaIcon from "../HomePageImages/trivia-icon.png";
 import MinesIcon from "../HomePageImages/minesweeper-icon.png";
 import Card from "react-bootstrap/Card";
+import MathGame from "../../pages/MathGame"
 import "./style.css"
+
 
 class GameMenu extends React.Component {
   render() {
   return (
-        <div className="container game-menu-container">
+        <Container className="container game-menu-container">
             <Row>
                 <Col size="sm-12">
                     <Row>
                         <Col size="sm-3">
+                        <Link>
                             <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
@@ -29,22 +32,26 @@ class GameMenu extends React.Component {
                                     Game Screen Shot Here
                                 </BackSide>
                             </Flippy>
+                        </Link>
                         </Col>
                         <Col size="sm-3">
+                        <Link to="/MathGame">
                              <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
                             >
                                 <FrontSide>
                                     <h4 className="text-center">Math Sprint</h4>
-                                    <Link to="/MathGame"><Card.Img src={MathIcon} alt="math"/></Link>
+                                    <Card.Img src={MathIcon} alt="math"/>
                                 </FrontSide>
                                 <BackSide>
                                     Game Screen Shot Here
                                 </BackSide>
                             </Flippy>
+                        </Link>
                         </Col>
                         <Col size="sm-3">
+                        <Link>
                              <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
@@ -57,8 +64,10 @@ class GameMenu extends React.Component {
                                     Game Screen Shot Here
                                 </BackSide>
                             </Flippy>
+                        </Link>
                         </Col>
                         <Col size="sm-3">
+                        <Link>
                             <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
@@ -71,11 +80,12 @@ class GameMenu extends React.Component {
                                     Game Screen Shot Here
                                 </BackSide>
                             </Flippy>
+                        </Link>
                         </Col>
                     </Row>
                 </Col>
             </Row>
-          </div>
+        </Container>
     );
 
   }

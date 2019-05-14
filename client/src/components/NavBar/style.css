@@ -6,7 +6,11 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark {
     padding: 0px;
 }
 
-a.nav-link {
+.nav-item {
+    padding-top: 13px;
+}
+
+a.main-nav.nav-link {
     padding: 13px 0px 0px 0px
 }
 

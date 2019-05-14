@@ -21,9 +21,9 @@ class NavBar extends Component {
             </Col>
             <Col size="sm-8">
               <Nav className="float-right">
-                <Nav.Link href="home">Home</Nav.Link>
-                <Nav.Link href="leaderboard">Leaderboard</Nav.Link>
-                <Nav.Link href="contact">Contact Us</Nav.Link>
+                <Nav.Link className="main-nav" href="home">Home</Nav.Link>
+                <Nav.Link className="main-nav" href="leaderboard">Leaderboard</Nav.Link>
+                <Nav.Link className="main-nav" href="contact">Contact Us</Nav.Link>
               {
                 !isAuthenticated() && (
                     <Button
@@ -56,43 +56,5 @@ class NavBar extends Component {
         );
       }
   }
-//  NavBar = () => {
-//     const { isAuthenticated } = this.props.auth;
-    // return (
-    // <Navbar bg="dark" variant="dark">
-    //     <Navbar.Brand href="home"><img className="img-fluid" src="../HomePageImages/logo.png" alt="logo"/></Navbar.Brand>
-    //     <Nav className="navbar">
-    //       <Nav.Link href="#home">Home</Nav.Link>
-    //       <Nav.Link href="#leaderboard">Leaderboard</Nav.Link>
-    //       <Nav.Link href="#contact">Contact Us</Nav.Link>
-    //     </Nav>
-    //     {
-    //       !isAuthenticated() && (
-    //           <Button
-    //             id="qsLoginBtn"
-    //             bsStyle="primary"
-    //             className="btn-margin"
-    //             onClick={this.login.bind(this)}
-    //           >
-    //             Log In
-    //           </Button>
-    //         )
-    //     }
-    //     {
-    //       isAuthenticated() && (
-    //           <Button
-    //             id="qsLogoutBtn"
-    //             bsStyle="primary"
-    //             className="btn-margin"
-    //             onClick={this.logout.bind(this)}
-    //           >
-    //             Log Out
-    //           </Button>
-    //         )
-    //     }
-    //   </Navbar>
-    //   );
-    // }
-// }
     
     export default NavBar;

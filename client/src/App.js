@@ -3,6 +3,8 @@ import './App.css';
 import NavBar from "./components/NavBar";
 import MathGame from "./pages/MathGame";
 import Home from "./pages/Home";
+import { Route, Switch } from "react-router-dom";
+
 
 class App extends Component {
 
@@ -37,8 +39,12 @@ class App extends Component {
           isAuthenticated={this.isAuthenticated}
           login={this.login}
           logout={this.logout}
-        ></NavBar>
-        <MathGame></MathGame>
+        />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Home" component={Home} />
+          <Route exact path="/MathGame" component={MathGame} />
+        </Switch>
       </div>
     );
   }

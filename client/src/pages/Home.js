@@ -31,9 +31,9 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <GameCarousel/>
-        <GameMenu/>
-        <LeaderBoardContainer/>
+        <GameCarousel></GameCarousel>
+        <GameMenu></GameMenu>
+        <LeaderBoardContainer></LeaderBoardContainer>
       </div>
     );
   }
