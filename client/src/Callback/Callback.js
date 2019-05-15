@@ -7,14 +7,14 @@ import LeaderBoard from "../components/LeaderBoard";
 
 class Callback extends Component {
   render() {
-
+    console.log(this.props);
     return (
       <div>
         <NavBar
-          isAuthenticated={this.isAuthenticated}
-          login={this.login}g
+          isAuthenticated={this.props.auth.isAuthenticated}
+          login={this.props.auth.login}
           
-          logout={this.logout}
+          logout={this.props.auth.logout}
         ></NavBar>
         <GameCarousel></GameCarousel>
         <GameMenu></GameMenu>
