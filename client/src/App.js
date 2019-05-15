@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from "./components/NavBar";
-import GameCarousel from "./components/GameCarousel";
-import GameMenu from "./components/GameMenu";
-import LeaderBoardNavs from "./components/LeaderBoardNavs";
-import LeaderBoard from "./components/LeaderBoard";
+import Footer from "./components/Footer";
+import MathGame from "./pages/MathGame";
+import Home from "./pages/Home";
+import { Route, Switch } from "react-router-dom";
 
 
 class App extends Component {
@@ -25,8 +25,6 @@ class App extends Component {
     this.props.auth.isAuthenticated();
   }
 
-
-
   componentDidMount() {
     const { renewSession } = this.props.auth;
 
@@ -37,19 +35,24 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="page-container">
+        <div className="content-wrap">          
         <NavBar
-          isAuthenticated={this.isAuthenticated}
-          login={this.login}
-          logout={this.logout}
-        ></NavBar>
-        <GameCarousel></GameCarousel>
-        <GameMenu></GameMenu>
-        <LeaderBoardNavs></LeaderBoardNavs>
-        <LeaderBoard></LeaderBoard>
+            isAuthenticated={this.isAuthenticated}
+            login={this.login}
+            logout={this.logout}
+          />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/Home" component={Home} />
+            <Route exact path="/MathGame" component={MathGame} />
+          </Switch>
+        </div>
+        <Footer></Footer>
       </div>
     );
   }
+
 }
 
 export default App;
