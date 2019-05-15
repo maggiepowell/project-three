@@ -79,6 +79,18 @@ class TriviaApp extends React.Component {
     }));
   }
 
+  setNextQuestion() {
+    const counter = this.state.counter + 1;
+    const questionId = this.state.questionId + 1;
+    this.setState({
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
+    });
+  }
+
   renderAnswerOptions(key) {
     return (
       <AnswerOption
@@ -93,17 +105,6 @@ class TriviaApp extends React.Component {
   }
 
 
-  setNextQuestion() {
-    const counter = this.state.counter + 1;
-    const questionId = this.state.questionId + 1;
-    this.setState({
-      counter: counter,
-      questionId: questionId,
-      question: quizQuestions[counter].question,
-      answerOptions: quizQuestions[counter].answers,
-      answer: ''
-    });
-  }
 
 
   getResults() {
