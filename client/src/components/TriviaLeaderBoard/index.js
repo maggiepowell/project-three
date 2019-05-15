@@ -41,13 +41,11 @@ class TriviaLeaderBoard extends Component {
   // not want a string form of data in the DOM tied to an attribute
   render() {
     return (
-      <Container>
-        <Row>
-          <Col size="sm-12">
-            <zing-grid id="TriviaLeaderBoard" caption="Trivia Champions" data={JSON.stringify(this.state.trivia)} loading></zing-grid>
-          </Col>
-        </Row>
-      </Container>
+      <Row>
+        <Col size="sm-12">
+          <zing-grid id="TriviaLeaderBoard" data={JSON.stringify(this.state.trivia)} loading></zing-grid>
+        </Col>
+      </Row>
     );
   }
 }

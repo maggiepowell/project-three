@@ -23,7 +23,7 @@ class MathGameModal extends React.Component {
       console.log("clicked!");
   }
  
-  const 
+
   render() {
     const { open } = this.state;
     return (

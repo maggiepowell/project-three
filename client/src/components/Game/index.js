@@ -9,6 +9,7 @@ import "./style.css";
 const randomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
+
 class Game extends Component {
 
   getChallengeNumbers = () => { 
@@ -44,7 +45,7 @@ class Game extends Component {
     let numbers = this.getChallengeNumbers();
     let target = this.getTargetNumber(numbers);
     this.setState({
-      hasGameStarted: true,
+      hasGameEnded: false,
       target: target,
       challengeNumbers: numbers,
       selectedIds: []
@@ -73,11 +74,9 @@ class Game extends Component {
             prevState.remainingSeconds - 1;
           if (newRemainingSeconds === 0) {
             clearInterval(this.intervalId);
-            this.showResults();
-            console.log("done");
-            return { hasGameStarted: false, remainingSeconds: 10 };
+            return { hasGameEnded: true, remainingSeconds: 10 };
           }
-          return { remainingSeconds: newRemainingSeconds };
+          return { hasGameEnded: false, remainingSeconds: newRemainingSeconds };
         });
       }, 1000);
   };
@@ -119,6 +118,15 @@ class Game extends Component {
     this.resetGame();
   }
 
+  showResults = () => {
+    if (this.state.hasGameEnded === true)
+    return (
+      <MathGameResultModal 
+        onClick={this.startTimer}
+      />
+    )
+  }
+
   render() {
     const { remainingSeconds } = this.state;
     return (
@@ -126,9 +134,7 @@ class Game extends Component {
         <MathGameModal
           onClick={this.startTimer}
         />
-        <MathGameResultModal
-          onClick={this.startTimer}
-        />
+        {this.showResults()}
         <Container>
           <div className="game-container">
             <Row>
