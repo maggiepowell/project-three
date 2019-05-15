@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Question from './Question';
+// import Question from './Question';
 import Quiz from './Quiz';
-import QuestionCount from './QuestionCount';
-import AnswerOption from './AnswerOption';
 import quizQuestions from './api/quizQuestions';
 import Result from './Results';
 
@@ -26,7 +24,7 @@ class TriviaApp extends React.Component {
       result: ''
     };
 
-    this.renderAnswerOptions = this.renderAnswerOptions.bind(this);
+    this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
 
   componentDidMount() {
