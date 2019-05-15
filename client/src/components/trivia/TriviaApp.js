@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Question from './Question';
+import Quiz from './Quiz';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
 import quizQuestions from './api/quizQuestions';
-import Result from './trivia';
+import Result from './Results';
 
-class Index extends React.Component {
+class TriviaApp extends React.Component {
 
   constructor(props) {
     super(props);
@@ -154,7 +155,7 @@ class Index extends React.Component {
   }
 }
   
-  Quiz.propTypes = {
+  TriviaApp.propTypes = {
     answer: PropTypes.string.isRequired,
     answerOptions: PropTypes.array.isRequired,
     counter: PropTypes.number.isRequired,
@@ -164,5 +165,5 @@ class Index extends React.Component {
     onAnswerSelected: PropTypes.func.isRequired
   };
   
-  export default Index;
+  export default TriviaApp;
   
