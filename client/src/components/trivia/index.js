@@ -4,6 +4,7 @@ import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
 import quizQuestions from './api/quizQuestions';
+import Result from './trivia';
 
 class Quiz extends React.Component {
 
@@ -118,6 +119,24 @@ class Quiz extends React.Component {
     }
   }
 
+  renderQuiz() {
+    return (
+      <Quiz
+        answer={this.state.answer}
+        answerOptions={this.state.answerOptions}
+        questionId={this.state.questionId}
+        question={this.state.question}
+        questionTotal={quizQuestions.length}
+        onAnswerSelected={this.handleAnswerSelected}
+      />
+    );
+  }
+
+  renderResult() {
+    return (
+      <Result quizResult={this.state.result} />
+    );
+  }
 
   render() {
     return (
@@ -145,5 +164,5 @@ class Quiz extends React.Component {
     onAnswerSelected: PropTypes.func.isRequired
   };
   
-  export default Quiz;
+  export default Index;
   
