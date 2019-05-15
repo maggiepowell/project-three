@@ -19,7 +19,7 @@ class GameMenu extends React.Component {
                 <Col size="sm-12">
                     <Row>
                         <Col size="sm-3">
-                        <Link>
+                        <Link to="/MemoryGame">
                             <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
@@ -41,7 +41,7 @@ class GameMenu extends React.Component {
                                 flipDirection="horizontal"
                             >
                                 <FrontSide>
-                                    <h4 className="text-center">Math Sprint</h4>
+                                    <h4 className="text-center">Digit Dash</h4>
                                     <Card.Img src={MathIcon} alt="math"/>
                                 </FrontSide>
                                 <BackSide>

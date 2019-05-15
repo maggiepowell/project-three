@@ -131,10 +131,10 @@ class Game extends Component {
     const { remainingSeconds } = this.state;
     return (
       <div className="game-body">
-        <MathGameModal
+        <div><MathGameModal
           onClick={this.startTimer}
-        />
-        {this.showResults()}
+        /></div>
+        <div>{this.showResults()}</div>
         <Container>
           <div className="game-container">
             <Row>
@@ -151,6 +151,8 @@ class Game extends Component {
               </Col>
               <Col size="sm-3"></Col>
             </Row>
+            <Row>
+            <Col size="sm-12">
               <div className="challenge-numbers">
                 <Row>
                 {this.state.challengeNumbers.map((value, index) =>
@@ -163,20 +165,28 @@ class Game extends Component {
                 )}
                 </Row>
               </div>
-            <Row>
-              <Col size="sm-12">
-                <div className="timer">{remainingSeconds}</div>
-              </Col>
+            </Col>
             </Row>
-            <Row>
-              <Col size="sm-6">
-                <h4 className="text-center">Wins: {this.state.wins}</h4>
-                <h4 className="text-center">Losses: {this.state.losses}</h4>
-              </Col>
-            </Row>  
           </div>
-        </Container>
-      </div>
+          </Container>
+          <Container>
+              <Row>
+                <Col size="sm-6">
+                  <div className="time-score">
+                    <h4>Seconds Remaining:</h4>
+                    <div className="timer">{remainingSeconds}</div>
+                  </div>
+                </Col>
+                <Col size="sm-6">
+                  <div className="time-score">
+                    <h4 className="text-center">Wins: {this.state.wins}</h4>
+                    <h4 className="text-center">Losses: {this.state.losses}</h4>
+                  </div>
+                </Col>
+              </Row>  
+          </Container>
+        </div>
+
     );
   }
 }
