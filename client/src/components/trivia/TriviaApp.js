@@ -108,23 +108,6 @@ class TriviaApp extends React.Component {
     }
   }
 
-  renderAnswerOptions(key) {
-    return (
-      <AnswerOption
-        key={key.content}
-        answerContent={key.content}
-        answerType={key.type}
-        answer={this.props.answer}
-        questionId={this.props.questionId}
-        onAnswerSelected={this.props.onAnswerSelected}
-      />
-    );
-  }
-
-
-
-
-
   renderQuiz() {
     return (
       <Quiz
@@ -138,6 +121,19 @@ class TriviaApp extends React.Component {
     );
   }
 
+  // renderAnswerOptions(key) {
+  //   return (
+  //     <AnswerOption
+  //       key={key.content}
+  //       answerContent={key.content}
+  //       answerType={key.type}
+  //       answer={this.props.answer}
+  //       questionId={this.props.questionId}
+  //       onAnswerSelected={this.props.onAnswerSelected}
+  //     />
+  //   );
+  // }
+
   renderResult() {
     return (
       <Result quizResult={this.state.result} />
@@ -146,17 +142,14 @@ class TriviaApp extends React.Component {
 
   render() {
     return (
-        <div className="quiz">
-          <QuestionCount
-            counter={this.state.questionId}
-            total={this.state.questionTotal}
-          />
-          <Question content={this.state.question} />
-          <ul className="answerOptions">
-            {this.state.answerOptions.map(this.renderAnswerOptions)}
-          </ul>
-        </div>
-    );
+      <div className="TriviaApp">
+      <div className="TriviaApp-header">
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <h2>React Quiz</h2>
+      </div>
+      {this.state.result ? this.renderResult() : this.renderQuiz()}
+    </div>
+      );
   }
 }
   
