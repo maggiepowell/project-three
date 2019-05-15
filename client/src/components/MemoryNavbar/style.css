@@ -1,10 +1,10 @@
-* {
+.memory-navbar {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: sans-serif;
 }
 
-.navbar{
+.memory-navbar{
   background: #e30b20;
   min-height: 70px;
   position: fixed;
@@ -17,7 +17,7 @@
   white-space: nowrap;
 }
 
-.navbar ul {
+.memory-navbar ul {
   margin: 0;
   padding: 0;
   width: 100%
