@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import MathGame from "./pages/MathGame";
 import Trivia from "./pages/Trivia"
 import Home from "./pages/Home";

@@ -23,10 +23,6 @@ class MathGameResultModal extends React.Component {
       console.log("clicked!");
   }
 
-  getScore = () => {
-    this.props.getScore();
-  }
-
  
   render() {
     const { open } = this.state;
@@ -41,6 +37,7 @@ class MathGameResultModal extends React.Component {
             closeOnOverlayClick={false}
         >
           <h2>Time's up!</h2>
+          <p>You scored {this.props.wins}</p>
           <button onClick={this.handleClick}>Play Again</button>
         </Modal>
       </div>
