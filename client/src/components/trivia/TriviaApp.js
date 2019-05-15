@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Quiz from './Quiz';
 import quizQuestions from './api/quizQuestions';
 import Result from './Results';
+import './TriviaApp.css';
 
 class TriviaApp extends React.Component {
 
