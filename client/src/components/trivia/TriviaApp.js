@@ -69,6 +69,16 @@ class TriviaApp extends React.Component {
             }
   }
 
+  setUserAnswer(answer) {
+    this.setState((state) => ({
+      answersCount: {
+        ...state.answersCount,
+        [answer]: state.answersCount[answer] + 1
+      },
+      answer: answer
+    }));
+  }
+
   renderAnswerOptions(key) {
     return (
       <AnswerOption
@@ -82,15 +92,6 @@ class TriviaApp extends React.Component {
     );
   }
 
-  setUserAnswer(answer) {
-    this.setState((state) => ({
-      answersCount: {
-        ...state.answersCount,
-        [answer]: state.answersCount[answer] + 1
-      },
-      answer: answer
-    }));
-  }
 
   setNextQuestion() {
     const counter = this.state.counter + 1;
