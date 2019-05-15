@@ -14,7 +14,7 @@ import "./style.css"
 class GameMenu extends React.Component {
   render() {
   return (
-        <Container className="container game-menu-container">
+        <div className="container game-menu-container">
             <Row>
                 <Col size="sm-12">
                     <Row>
@@ -85,7 +85,7 @@ class GameMenu extends React.Component {
                     </Row>
                 </Col>
             </Row>
-        </Container>
+        </div>
     );
 
   }
