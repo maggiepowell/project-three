@@ -155,7 +155,7 @@ class TriviaApp extends React.Component {
   }
 }
   
-  Quiz.propTypes = {
+  TriviaApp.propTypes = {
     answer: PropTypes.string.isRequired,
     answerOptions: PropTypes.array.isRequired,
     counter: PropTypes.number.isRequired,
