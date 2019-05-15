@@ -7,7 +7,7 @@ import AnswerOption from './AnswerOption';
 import quizQuestions from './api/quizQuestions';
 import Result from './trivia';
 
-class Index extends React.Component {
+class TriviaApp extends React.Component {
 
   constructor(props) {
     super(props);
@@ -165,5 +165,5 @@ class Index extends React.Component {
     onAnswerSelected: PropTypes.func.isRequired
   };
   
-  export default Index;
+  export default TriviaApp;
   
