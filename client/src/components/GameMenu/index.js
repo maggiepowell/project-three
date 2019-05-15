@@ -26,6 +26,7 @@ class GameMenu extends React.Component {
                                 <FrontSide>
                                         <h4 className="text-center">Memory Lane</h4>
                                     <Card.Img src={MemoryIcon} alt="memory"/>
+                                    <p>Improve your recall and short-term memory.</p>
                                 </FrontSide>
                                 <BackSide>
                                     Game Screen Shot Here
@@ -42,6 +43,7 @@ class GameMenu extends React.Component {
                                 <FrontSide>
                                     <h4 className="text-center">Digit Dash</h4>
                                     <Card.Img src={MathIcon} alt="math"/>
+                                    <p>Improve your logical thinking skills.</p>
                                 </FrontSide>
                                 <BackSide>
                                     Game Screen Shot Here
@@ -58,6 +60,7 @@ class GameMenu extends React.Component {
                                 <FrontSide>
                                     <h4 className="text-center">Field Navigator</h4>
                                     <Card.Img src={MinesIcon} alt="mines"/>
+                                    <p>Improve your problem solving abilities</p>
                                 </FrontSide>
                                 <BackSide>
                                     Game Screen Shot Here
@@ -74,6 +77,7 @@ class GameMenu extends React.Component {
                                 <FrontSide>
                                     <h4 className="text-center">Quiz Bowl</h4>
                                     <Card.Img src={TriviaIcon} alt="trivia"/>
+                                    <p>Improve your critcal thinking and deductive reasoning.</p>
                                 </FrontSide>
                                 <BackSide>
                                     Game Screen Shot Here

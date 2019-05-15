@@ -10,7 +10,7 @@ const randomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 
-class Game extends Component {
+class AddGame extends Component {
 
   getChallengeNumbers = () => { 
     return Array.from({
@@ -136,21 +136,18 @@ class Game extends Component {
         /></div>
         <div>{this.showResults()}</div>
         <Container>
-          <div className="game-container">
-            <Row>
-              <Col size="sm-12">
-                <h1 className="text-center">
-                    Target Number: 
-                </h1>
-              </Col>
-            </Row>
             <Row>
               <Col size="sm-3"></Col>
               <Col size="sm-6">
-                  <h1 className="target text-center">{this.state.target}</h1>
+              <div className="target-container">
+                <h4 className="text-center">Target Number: </h4>
+                <h1 className="target text-center">{this.state.target}</h1>
+              </div>
               </Col>
               <Col size="sm-3"></Col>
             </Row>
+          </Container>
+          <Container>
             <Row>
             <Col size="sm-12">
               <div className="challenge-numbers">
@@ -167,18 +164,17 @@ class Game extends Component {
               </div>
             </Col>
             </Row>
-          </div>
           </Container>
           <Container>
               <Row>
                 <Col size="sm-6">
-                  <div className="time-score">
+                  <div className="score">
                     <h4>Seconds Remaining:</h4>
-                    <div className="timer">{remainingSeconds}</div>
+                    <div className="timer"><h4>{remainingSeconds}</h4></div>
                   </div>
                 </Col>
                 <Col size="sm-6">
-                  <div className="time-score">
+                  <div className="time">
                     <h4 className="text-center">Wins: {this.state.wins}</h4>
                     <h4 className="text-center">Losses: {this.state.losses}</h4>
                   </div>
@@ -191,4 +187,4 @@ class Game extends Component {
   }
 }
 
-export default Game;
+export default AddGame;

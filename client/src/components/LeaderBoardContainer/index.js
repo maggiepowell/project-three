@@ -32,7 +32,7 @@ return (
             onClick={() => props.handleComponentChange("MathLeaderBoard")}
             className={props.currentPage === "MathLeaderBoard" ? "Nav.Link active" : "Nav."}
           >
-            Math Champions
+            Digit Champions
           </Nav.Link>
       </Nav.Item>
       <Nav.Item className="leader-nav">
@@ -40,7 +40,7 @@ return (
             onClick={() => props.handleComponentChange("MinesLeaderBoard")}
             className={props.currentPage === "MinesLeaderBoard" ? "nav-link active" : "nav-link"}
           >
-            Mines Champions
+            Field Champions
           </Nav.Link>
       </Nav.Item>
       <Nav.Item className="leader-nav">
@@ -48,7 +48,7 @@ return (
             onClick={() => props.handleComponentChange("TriviaLeaderBoard")}
             className={props.currentPage === "TriviaLeaderBoard" ? "nav-link active" : "nav-link"}
           >
-            Trivia Champions
+            Quiz Champions
           </Nav.Link>
       </Nav.Item>
     </Nav>

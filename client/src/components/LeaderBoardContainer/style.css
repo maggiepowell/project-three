@@ -1,13 +1,22 @@
 .leaderboard-container {
     margin-top: 1.5rem;
+    min-height: 50vh;
 }
 
 .leader-nav.nav-item {
     padding: 0px;
     border: 1px solid #dee2e6;
+    background-color: white;
 }
 
 a.nav-link{
     padding-top: 5px;
     padding-bottom: 5px;
+    color: #8C0B23;
+}
+
+a:hover, a:focus, a:active {
+    color: white;
+    background-color: #8C0B23;
+    text-decoration: none;
 }

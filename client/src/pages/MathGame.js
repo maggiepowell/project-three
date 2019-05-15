@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Game from "../components/Game";
+import AddGame from "../components/AddGame";
 
 class MathGame extends Component {
   render() {
       return (
         <div>
-          <Game
+          <AddGame
             challengeRange={[2, 9]}
             challengeSize={6}
             answerSize={4}
-            initialSeconds={60}
+            initialSeconds={3000}
           />
         </div>
       );

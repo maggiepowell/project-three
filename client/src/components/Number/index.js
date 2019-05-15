@@ -23,6 +23,7 @@ class Number extends Component {
             <h1 className="text-center">
                 <div
                     className="number"
+                    style={{ opacity: this.props.clickable ? 1 : 0.3 }}
                     onClick={this.handleClick}
                 >
                     {this.props.value}
