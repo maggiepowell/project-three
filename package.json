@@ -5,7 +5,9 @@
   "main": "server.js",
   "dependencies": {
     "auth0-js": "^9.0.0",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
+    "mysql2": "^1.6.5",
     "react-flippy": "^0.1.2",
     "react-sticky-footer": "0.1.0-rc3",
     "sequelize": "^5.7.6",
