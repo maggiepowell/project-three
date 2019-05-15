@@ -6,7 +6,7 @@ import AnswerOption from './AnswerOption';
 import quizQuestions from './api/quizQuestions';
 import Result from './trivia';
 
-class Quiz extends React.Component {
+class Index extends React.Component {
 
   constructor(props) {
     super(props);
