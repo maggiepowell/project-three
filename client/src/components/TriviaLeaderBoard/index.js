@@ -43,7 +43,7 @@ class TriviaLeaderBoard extends Component {
     return (
       <Row>
         <Col size="sm-12">
-          <zing-grid id="TriviaLeaderBoard" data={JSON.stringify(this.state.trivia)} loading></zing-grid>
+          <zing-grid id="TriviaLeaderBoard" data={JSON.stringify(this.props.stats)} loading></zing-grid>
         </Col>
       </Row>
     );

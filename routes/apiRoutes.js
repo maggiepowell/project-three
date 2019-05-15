@@ -1,5 +1,6 @@
 var db = require("../models");
-var Sequelize = require("../node_modules/sequelize/index") 
+var Sequelize = require("../node_modules/sequelize/index");
+const Op = Sequelize.Op;
 
 module.exports = function (app) {
 
@@ -27,7 +28,7 @@ module.exports = function (app) {
 
     // Returns top scores for all games
     app.get("/api/champions", function(req, res) {
-        const leaderPromise = Project.findAll({
+        const leaderPromise = db.Profiles.findAll({
             limit: 10,
             where: {
                 leader_score :{
@@ -38,7 +39,7 @@ module.exports = function (app) {
                 ['leader_score', 'DESC']
             ]
         })
-        const memoryPromise = Project.findAll({
+        const memoryPromise = db.Profiles.findAll({
             limit: 10,
             where: {
                 score_memory :{
@@ -49,7 +50,7 @@ module.exports = function (app) {
                 ['score_memory', 'DESC']
             ]
         })
-        const mathPromise = Project.findAll({
+        const mathPromise = db.Profiles.findAll({
             limit: 10,
             where: {
                 score_math :{
@@ -60,7 +61,7 @@ module.exports = function (app) {
                 ['score_math', 'DESC']
             ]
         })
-        const seekerPromise = Project.findAll({
+        const seekerPromise = db.Profiles.findAll({
             limit: 10,
             where: {
                 score_minesweeper :{
@@ -71,7 +72,7 @@ module.exports = function (app) {
                 ['score_minesweeper', 'DESC']
             ]
         })
-        const triviaPromise = Project.findAll({
+        const triviaPromise = db.Profiles.findAll({
             limit: 10,
             where: {
                 score_trivia :{

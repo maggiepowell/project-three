@@ -68,15 +68,15 @@ class LeaderBoardContainer extends Component {
 
     renderComponent = () => {
         if (this.state.currentComponent === "LeaderBoard") {
-            return <LeaderBoard />;
+            return <LeaderBoard stats={this.props.stats.leader}/>;
         } else if (this.state.currentComponent === "MathLeaderBoard" ) {
-            return <MathLeaderBoard />
+            return <MathLeaderBoard stats={this.props.stats.math}/>
         } else if (this.state.currentComponent === "MemoryLeaderBoard") {
-            return <MemoryLeaderBoard />
+            return <MemoryLeaderBoard stats={this.props.stats.memory}/>
         } else if (this.state.currentComponent === "MinesLeaderBoard") {
-            return <MinesLeaderBoard />
+            return <MinesLeaderBoard stats={this.props.stats.minesweeper}/>
         } else {
-            return <TriviaLeaderBoard />
+            return <TriviaLeaderBoard stats={this.props.stats.trivia}/>
         }
     };
 
