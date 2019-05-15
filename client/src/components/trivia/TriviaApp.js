@@ -40,7 +40,9 @@ class TriviaApp extends React.Component {
 
   //randomise the order of the answer options
   shuffleArray(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    var currentIndex = array.length,
+    temporaryValue,
+    randomIndex;
   
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
@@ -56,7 +58,17 @@ class TriviaApp extends React.Component {
     }
   
     return array;
-  };  
+  };
+
+  handleAnswerSelected(event) {
+    this.setUserAnswer(event.currentTarget.value);
+    if (this.state.questionId < quizQuestions.length) {
+        setTimeout(() => this.setNextQuestion(), 300);
+      } else {
+        setTimeout(() => this.setResults(this.getResults()), 300);
+            }
+  }
+
   renderAnswerOptions(key) {
     return (
       <AnswerOption
@@ -92,14 +104,6 @@ class TriviaApp extends React.Component {
     });
   }
 
-  handleAnswerSelected(event) {
-    this.setUserAnswer(event.currentTarget.value);
-    if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
-      } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
-            }
-  }
 
   getResults() {
     const answersCount = this.state.answersCount;
