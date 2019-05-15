@@ -5,7 +5,7 @@ import Quiz from './Quiz';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
 import quizQuestions from './api/quizQuestions';
-import Result from './trivia';
+import Result from './Results';
 
 class TriviaApp extends React.Component {
 
