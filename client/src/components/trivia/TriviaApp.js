@@ -100,6 +100,13 @@ class TriviaApp extends React.Component {
     return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
   }
 
+  setResults (result) {
+    if (result.length === 1) {
+      this.setState({ result: result[0] });
+    } else {
+      this.setState({ result: 'Undetermined' });
+    }
+  }
 
   renderAnswerOptions(key) {
     return (
@@ -117,14 +124,6 @@ class TriviaApp extends React.Component {
 
 
 
-
-  setResults (result) {
-    if (result.length === 1) {
-      this.setState({ result: result[0] });
-    } else {
-      this.setState({ result: 'Undetermined' });
-    }
-  }
 
   renderQuiz() {
     return (
