@@ -3,11 +3,11 @@ module.exports = function(sequelize, DataTypes) {
         "Profiles",
         {
             username: DataTypes.STRING,
-            leader_score: DataTypes.INTERGER,
-            score_memory: DataTypes.INTERGER,
-            score_trivia: DataTypes.INTERGER,
-            score_minesweeper: DataTypes.INTERGER,
-            score_math: DataTypes.INTERGER
+            leader_score: DataTypes.INTEGER,
+            score_memory: DataTypes.INTEGER,
+            score_trivia: DataTypes.INTEGER,
+            score_minesweeper: DataTypes.INTEGER,
+            score_math: DataTypes.INTEGER
     },
         {
         freezeTableName: true

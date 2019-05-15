@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import Quiz from "../components/trivia";
+import TriviaApp from "../components/trivia/TriviaApp";
 
 class Trivia extends Component {
+
+
   render() {
       return (
-        <Quiz />
+        <TriviaApp />
       );
   }
 
