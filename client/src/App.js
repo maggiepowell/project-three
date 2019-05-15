@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   isAuthenticated = () => {
-    this.props.auth.isAuthenticated();
+    return this.props.auth.isAuthenticated();
   }
 
   componentDidMount() {
