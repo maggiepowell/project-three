@@ -20,7 +20,7 @@ export function makeRoutes() {
           <Route path="/" render={(props) => <App auth={auth} {...props} />} />
           <Route path="/callback" render={(props) => {
             handleAuthentication(props);
-            return <Callback {...props} /> 
+            return <Callback {...props} auth={auth} /> 
           }}/>
         </div>
       </Router>

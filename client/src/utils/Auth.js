@@ -21,4 +21,5 @@ export default {
   getToken: function() {
     return localStorage.getItem(TOKEN_KEY);
   }
+  
 }
