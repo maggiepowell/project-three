@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require("express");
-const routes = require("./routes/apiRoutes");
 const app = express();
+const routes = require("./routes/apiRoutes")(app);
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
 
@@ -15,7 +15,7 @@ app.use('*', (req, res, next) => {
 })
 
 // Add routes, both API and view
-app.use(routes);
+
 
 var syncOptions = { force: false };
 
