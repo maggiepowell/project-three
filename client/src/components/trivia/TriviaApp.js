@@ -29,9 +29,7 @@ class TriviaApp extends React.Component {
     this.renderAnswerOptions = this.renderAnswerOptions.bind(this);
   }
 
-//The componentWillMount life cycle event is invoked once, both on the client and server, immediately before the initial rendering occurs.
-//When you call setState within this method as we are above on line 4, render() will see the updated state and it will be executed only once despite the state change
-  componentWillMount() {
+  componentDidMount() {
     const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));  
   
     this.setState({
