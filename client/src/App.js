@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from "./components/NavBar";
 import MathGame from "./pages/MathGame";
-import Trivia from "./pages/Trivia"
+import Trivia from "./pages/Trivia";
+import Memory from "./pages/Memory";
 import Home from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 
@@ -46,6 +47,7 @@ class App extends Component {
           <Route exact path="/Home" component={Home} />
           <Route exact path="/MathGame" component={MathGame} />
           <Route exact path="/Trivia" component={Trivia} />
+          <Route exact path="/Memory" component={Memory} />
         </Switch>
       </div>
     );
