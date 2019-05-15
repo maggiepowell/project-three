@@ -91,6 +91,16 @@ class TriviaApp extends React.Component {
     });
   }
 
+  getResults() {
+    const answersCount = this.state.answersCount;
+    const answersCountKeys = Object.keys(answersCount);
+    const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
+    const maxAnswerCount = Math.max.apply(null, answersCountValues);
+  
+    return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+  }
+
+
   renderAnswerOptions(key) {
     return (
       <AnswerOption
@@ -107,14 +117,6 @@ class TriviaApp extends React.Component {
 
 
 
-  getResults() {
-    const answersCount = this.state.answersCount;
-    const answersCountKeys = Object.keys(answersCount);
-    const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
-    const maxAnswerCount = Math.max.apply(null, answersCountValues);
-  
-    return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
-  }
 
   setResults (result) {
     if (result.length === 1) {
