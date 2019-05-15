@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import CharacterCard from "./components/MemoryCharacterCard";
-import Wrapper from "./components/MemoryWrapper";
-import CardWrapper from "./components/MemoryCardWrapper";
-import Navbar from "./components/MemoryNavbar";
+import CharacterCard from "../components/MemoryCharacterCard";
+import Wrapper from "../components/MemoryWrapper";
+import CardWrapper from "../components/MemoryCardWrapper";
+import Navbar from "../components/MemoryNavbar";
 import character from "./character.json";
 import './Memory.css';
 
