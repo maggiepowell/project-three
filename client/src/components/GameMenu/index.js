@@ -6,6 +6,7 @@ import MathIcon from "../HomePageImages/addition-icon.png";
 import MemoryIcon from "../HomePageImages/memory-icon.png";
 import TriviaIcon from "../HomePageImages/trivia-icon.png";
 import MinesIcon from "../HomePageImages/minesweeper-icon.png";
+import DigitDash from "../HomePageImages/digit-dash.png";
 import Card from "react-bootstrap/Card";
 import "./style.css"
 
@@ -29,7 +30,7 @@ class GameMenu extends React.Component {
                                     <p>Improve your recall and short-term memory.</p>
                                 </FrontSide>
                                 <BackSide>
-                                    Game Screen Shot Here
+                                    <h4 className="text-center">Preview</h4>
                                 </BackSide>
                             </Flippy>
                         </Link>
@@ -46,7 +47,8 @@ class GameMenu extends React.Component {
                                     <p>Improve your logical thinking skills.</p>
                                 </FrontSide>
                                 <BackSide>
-                                    Game Screen Shot Here
+                                    <h4 className="text-center">Preview</h4>
+                                    <img className="img-fluid back-image" src={DigitDash} alt="digit"/>
                                 </BackSide>
                             </Flippy>
                         </Link>
@@ -63,7 +65,7 @@ class GameMenu extends React.Component {
                                     <p>Improve your problem solving abilities</p>
                                 </FrontSide>
                                 <BackSide>
-                                    Game Screen Shot Here
+                                    <h4 className="text-center">Preview</h4>
                                 </BackSide>
                             </Flippy>
                         </Link>
@@ -80,7 +82,7 @@ class GameMenu extends React.Component {
                                     <p>Improve your critcal thinking and deductive reasoning.</p>
                                 </FrontSide>
                                 <BackSide>
-                                    Game Screen Shot Here
+                                    <h4 className="text-center">Preview</h4>
                                 </BackSide>
                             </Flippy>
                         </Link>

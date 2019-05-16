@@ -37,8 +37,8 @@ class MathGameResultModal extends React.Component {
             closeOnOverlayClick={false}
         >
           <h2>Time's up!</h2>
-          <p>You scored {this.props.wins}</p>
-          <button onClick={this.handleClick}>Play Again</button>
+          <p className="results-text">You scored {this.props.wins} points</p>
+          <button className="results-button" onClick={this.handleClick}>Play Again</button>
         </Modal>
       </div>
     );

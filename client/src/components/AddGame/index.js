@@ -41,6 +41,20 @@ class AddGame extends Component {
     this.resetGame();
   }
 
+  completeReset = () => {
+    this.setState({
+      hasGameStarted: false,
+      remainingSeconds: this.props.initialSeconds,
+      selectedIds: [],
+      target: 0,
+      challengeNumbers: [],
+      wins: 0,
+      losses: 0
+    })
+    this.resetGame();
+    this.startTimer();
+  }
+
   resetGame = () => {
     let numbers = this.getChallengeNumbers();
     let target = this.getTargetNumber(numbers);
@@ -119,21 +133,25 @@ class AddGame extends Component {
   }
 
   showResults = () => {
-    if (this.state.hasGameEnded === true)
+    if (this.state.hasGameEnded === true) {
+     
     return (
       <MathGameResultModal 
-        onClick={this.startTimer}
+        wins={this.state.wins}
+        onClick={this.completeReset}
       />
-    )
+    );
+
+    }
   }
 
   render() {
     const { remainingSeconds } = this.state;
     return (
       <div className="game-body">
-        <div><MathGameModal
+        <MathGameModal
           onClick={this.startTimer}
-        /></div>
+        />
         <div>{this.showResults()}</div>
         <Container>
             <Row>
