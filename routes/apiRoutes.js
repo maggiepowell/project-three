@@ -29,6 +29,7 @@ module.exports = function (app) {
     // Returns top scores for all games
     app.get("/api/champions", function(req, res) {
         const leaderPromise = db.Profiles.findAll({
+            attributes: ['username', 'leader_score'],
             limit: 10,
             where: {
                 leader_score :{
@@ -41,6 +42,7 @@ module.exports = function (app) {
         })
         const memoryPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_memory'],
             where: {
                 score_memory :{
                     [Op.gte]: 0
@@ -52,6 +54,7 @@ module.exports = function (app) {
         })
         const mathPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_math'],
             where: {
                 score_math :{
                     [Op.gte]: 0
@@ -63,6 +66,7 @@ module.exports = function (app) {
         })
         const seekerPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_minesweeper'],
             where: {
                 score_minesweeper :{
                     [Op.gte]: 0
@@ -74,6 +78,7 @@ module.exports = function (app) {
         })
         const triviaPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_trivia'],
             where: {
                 score_trivia :{
                     [Op.gte]: 0

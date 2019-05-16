@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Board from './Board';
-import './index.css';
+import './index.scss';
 
 class Game extends React.Component {
   state = {
@@ -13,12 +13,13 @@ class Game extends React.Component {
   render() {
     const { height, width, mines } = this.state;
     return (
-      <div className="game">
-        <Board height={height} width={width} mines={mines} />
+      <div className="game-body">
+        <div className="game">
+          <Board height={height} width={width} mines={mines} />
+        </div>
       </div>
     );
   }
 }
 
-ReactDOM.render(<Game />, document.getElementById("root"));
-
+export default Game;

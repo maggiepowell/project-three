@@ -6,6 +6,7 @@ import MathIcon from "../HomePageImages/addition-icon.png";
 import MemoryIcon from "../HomePageImages/memory-icon.png";
 import TriviaIcon from "../HomePageImages/trivia-icon.png";
 import MinesIcon from "../HomePageImages/minesweeper-icon.png";
+import MinesCard from "../HomePageImages/minesweeper-card.jpg";
 import Card from "react-bootstrap/Card";
 import "./style.css"
 
@@ -50,7 +51,7 @@ class GameMenu extends React.Component {
                         </Link>
                         </Col>
                         <Col size="sm-3">
-                        <Link>
+                        <Link to="/MinesweeperGame">
                              <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
@@ -60,7 +61,7 @@ class GameMenu extends React.Component {
                                     <Card.Img src={MinesIcon} alt="mines"/>
                                 </FrontSide>
                                 <BackSide>
-                                    Game Screen Shot Here
+                                    <img src={MinesCard}></img>
                                 </BackSide>
                             </Flippy>
                         </Link>
