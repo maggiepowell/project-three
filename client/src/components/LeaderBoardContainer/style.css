@@ -1,6 +1,8 @@
 .leaderboard-container {
     margin-top: 1.5rem;
-    min-height: 50vh;
+    min-height: 75vh;
+    margin-bottom: 5rem;
+
 }
 
 .leader-nav.nav-item {

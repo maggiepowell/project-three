@@ -30,10 +30,11 @@ class Home extends React.Component {
   
   render() {
     return (
-      <div>
+      <div class="main-container">
         <GameCarousel></GameCarousel>
         <GameMenu></GameMenu>
         <LeaderBoardContainer></LeaderBoardContainer>
+        <Footer></Footer>
       </div>
     );
   }
