@@ -1,13 +1,13 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // Sets requests to use json and set req.body
 const routes = require("./routes/apiRoutes")(app);
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json()); // Sets requests to use json and set req.body
 
 app.use('*', (req, res, next) => {
   console.log(req);
@@ -15,7 +15,6 @@ app.use('*', (req, res, next) => {
 })
 
 // Add routes, both API and view
-
 
 var syncOptions = { force: false };
 
