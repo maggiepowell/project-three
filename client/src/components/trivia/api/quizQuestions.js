@@ -1,88 +1,133 @@
 var quizQuestions = [
     {
-        question: "What franchise would you rather play a game from?",
-        answers: [
-            {
-                type: "Microsoft",
-                content: "Halo"
-            },
-            {
-                type: "Nintendo",
-                content: "Pokemon"
-            },
-            {
-                type: "Sony",
-                content: "Uncharted"
-            }
-        ]
+      question: "What is your favorite coding language?",
+      answerindex : 1,
+      answers: [
+        {
+          type: "One",
+          content: "JavaScript",
+          answer : false
+        },
+        {
+          type: "Two",
+          content: "JQuery",
+          answer : false
+        },
+        {
+          type: "Three",
+          content: "HTML",
+          answer : false
+        },
+        {
+          type: "Four",
+          content: "React",
+          answer : false
+        }
+      ]
     },
     {
-        question: "Which console would you prefer to play with friends?",
-        answers: [
-            {
-                type: "Microsoft",
-                content: "X-Box"
-            },
-            {
-                type: "Nintendo",
-                content: "Nintendo 64"
-            },
-            {
-                type: "Sony",
-                content: "Playstation 1"
-            }
-        ]
+      question: "Which console would you prefer to work on?",
+      answerindex : 1,
+      answers: [
+        {
+          type: "One",
+          content: "IBM",
+          answer : false
+        },
+        {
+          type: "Two",
+          content: "Dell",
+          answer : false
+        },
+        {
+          type: "Three",
+          content: "Apple",
+          answer : false
+        },
+        {
+          type: "Four",
+          content: "HP",
+          answer : false
+        }
+      ]
     },
     {
-        question: "Which of these racing franchises would you prefer to play a game from?",
-        answers: [
-            {
-                type: "Microsoft",
-                content: "Forza"
-            },
-            {
-                type: "Nintendo",
-                content: "Mario Kart"
-            },
-            {
-                type: "Sony",
-                content: "Gran Turismo"
-            }
-        ]
+      question: "How long have you been coding?",
+      answerindex : 1,
+      answers: [
+        {
+          type: "One",
+          content: "Less than six months",
+          answer : false
+        },
+        {
+          type: "Two",
+          content: "Between six months and one year",
+          answer : false
+        },
+        {
+          type: "Three",
+          content: "More than a year but less than five years",
+          answer : false
+        },
+        {
+          type: "Four",
+          content: "More than five years",
+          answer : false
+        }
+      ]
     },
     {
-        question: "Which of these games do you think is best?",
-        answers: [
-            {
-                type: "Microsoft",
-                content: "BioShock"
-            },
-            {
-                type: "Nintendo",
-                content: "The Legend of Zelda: Ocarina of Time"
-            },
-            {
-                type: "Sony",
-                content: "Final Fantasy VII"
-            }
-        ]
+      question: "Which is your prefered method of learning?",
+      answerindex : 1,
+      answers: [
+        {
+          type: "One",
+          content: "Visual",
+          answer : false
+        },
+        {
+          type: "Two",
+          content: "Audio",
+          answer : false
+        },
+        {
+          type: "Three",
+          content: "Tactile",
+          answer : false
+        },
+        {
+          type: "Four",
+          content: "Combination",
+          answer : false
+        }
+      ]
     },
     {
-        question: "What console would you prefer to own?",
-        answers: [
-            {
-                type: "Microsoft",
-                content: "X-Box One"
-            },
-            {
-                type: "Nintendo",
-                content: "Wii U"
-            },
-            {
-                type: "Sony",
-                content: "Playstation 4"
-            }
-        ]
+      question: "What kind of company would you like to work for?",
+      answerindex : 1,
+      answers: [
+        {
+          type: "One",
+          content: "Government",
+          answer : false
+        },
+        {
+          type: "Two",
+          content: "Start-up",
+          answer : false
+        },
+        {
+          type: "Three",
+          content: "Non-profit",
+          answer : false
+        },
+        {
+          type: "Four",
+          content: "Corporation",
+          answer : false
+        }
+      ]
     }
   ];
   
