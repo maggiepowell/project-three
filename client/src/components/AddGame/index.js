@@ -5,6 +5,7 @@ import MathGameResultModal from "../MathGameResultModal"
 import { Col, Row, Container } from "../Grid";
 import _ from 'lodash';
 import "./style.css";
+import API from "../../utils/API";
 
 const randomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
@@ -134,7 +135,8 @@ class AddGame extends Component {
 
   showResults = () => {
     if (this.state.hasGameEnded === true) {
-     
+    API.updateMath(this.state.wins);
+    console.log("wins: " + this.state.wins);
     return (
       <MathGameResultModal 
         wins={this.state.wins}

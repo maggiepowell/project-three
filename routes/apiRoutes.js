@@ -30,12 +30,14 @@ module.exports = function (app) {
     app.post("/api/mathupdate", function(req, res) {
         console.log(req.body);
         db.Profiles.update({
-            leader_score: req.body,
+            score_math: req.body.score,
+        },{
             where: {
                 username: 'Guest'
             }
-        }).then(function (response) {
-            res.json(response);
+        })
+        .then(function (response) {
+            res.send(200).end();
         });
     });
 
