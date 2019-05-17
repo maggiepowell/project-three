@@ -1,5 +1,5 @@
-/*
-.card {
+
+.memory-card {
   background: #fff;
   border-radius: 2px;
   height: 275px;
@@ -10,28 +10,26 @@
   text-align: left;
 }
 
-.card > .img-container {
+.memory-card > .img-container {
   height: 100%;
   overflow: hidden;
   text-align: center;
   background: #e30b20;
 } 
-.card > .img-container > img {
+.memory-card > .img-container > img {
   width: 80%
 }
 
-.card > .content {
+.memory-card > .content {
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 15px;
 }
 
-.card > .content > ul {
+.memory-card > .content > ul {
   list-style-type: none;
 }
 
-.card > .content > ul > li {
+.memory-card > .content > ul > li {
   margin-top: 18px;
 }
-*/
-
