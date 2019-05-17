@@ -17,6 +17,7 @@ li {
 
   .answerOption {
     padding: 5px;
+    font-size: 18px;
   }
 
 button {
@@ -24,6 +25,8 @@ button {
     border-color: #4b5918;
     color: #f2f2f0;
     margin: 2px;
+    border-radius: 5px;
+
 }
 
   .result-link {
