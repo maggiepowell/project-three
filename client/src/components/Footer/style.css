@@ -1,6 +1,6 @@
 .footer {
     width: 100%;
-    position: absolute;
+    position: static;
     bottom: 0;
 }
 
@@ -20,19 +20,12 @@ p.footer-text{
     color: white;
 }
 
-.contact-header{
-    padding-left: 9px;
-}
-
 .contact-icon{
-    font-size: smaller;
-    margin-top: -5px;
+    font-size: x-small;
 }
 
 .contact-text{
     font-size: x-small;
-    margin-left: -10px;
-    margin-top: 4px;
 }
 
 .follow-header {
@@ -45,16 +38,10 @@ p.footer-text{
     text-align: center;
 }
 
-.about-header {
-    padding-right: 10px;
-}
-
 .about-text {
-    font-size: small;
-    margin-top: 4px;
-    margin-right: -20px;
+    font-size: x-small;
 }
 
 .about-icon {
-    font-size: small;
+    font-size: x-small;
 }
