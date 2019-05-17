@@ -44,7 +44,7 @@ class MathLeaderBoard extends Component {
       <div>
         <Row>
           <Col size="sm-12">
-            <zing-grid id="MathLeaderBoard" data={JSON.stringify(this.state.math)} loading></zing-grid>
+            <zing-grid id="MathLeaderBoard" data={JSON.stringify(this.props.stats)} loading></zing-grid>
           </Col>
         </Row>
       </div>

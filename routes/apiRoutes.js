@@ -1,5 +1,6 @@
 var db = require("../models");
-var Sequelize = require("../node_modules/sequelize/index") 
+var Sequelize = require("../node_modules/sequelize/index");
+const Op = Sequelize.Op;
 
 module.exports = function (app) {
 
@@ -25,9 +26,12 @@ module.exports = function (app) {
         });
     });
 
+
+
     // Returns top scores for all games
     app.get("/api/champions", function(req, res) {
-        const leaderPromise = Project.findAll({
+        const leaderPromise = db.Profiles.findAll({
+            attributes: ['username', 'leader_score'],
             limit: 10,
             where: {
                 leader_score :{
@@ -38,8 +42,9 @@ module.exports = function (app) {
                 ['leader_score', 'DESC']
             ]
         })
-        const memoryPromise = Project.findAll({
+        const memoryPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_memory'],
             where: {
                 score_memory :{
                     [Op.gte]: 0
@@ -49,8 +54,9 @@ module.exports = function (app) {
                 ['score_memory', 'DESC']
             ]
         })
-        const mathPromise = Project.findAll({
+        const mathPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_math'],
             where: {
                 score_math :{
                     [Op.gte]: 0
@@ -60,8 +66,9 @@ module.exports = function (app) {
                 ['score_math', 'DESC']
             ]
         })
-        const seekerPromise = Project.findAll({
+        const seekerPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_minesweeper'],
             where: {
                 score_minesweeper :{
                     [Op.gte]: 0
@@ -71,8 +78,9 @@ module.exports = function (app) {
                 ['score_minesweeper', 'DESC']
             ]
         })
-        const triviaPromise = Project.findAll({
+        const triviaPromise = db.Profiles.findAll({
             limit: 10,
+            attributes: ['username', 'score_trivia'],
             where: {
                 score_trivia :{
                     [Op.gte]: 0
