@@ -4,15 +4,7 @@
     color: #f2f2f0;
     text-align: center;
   }
-  
-  /* .App-intro {
-    font-size: large;
-  } */
-  
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
+    
   .radioCustomLabel {
     position: flex;
     width: 100%;
@@ -37,15 +29,18 @@ li {
       /* background-color: green; */
     color: #000000;
   }
+
   .status{
     color: #4b5918;
   }
+
   .list-grp {
     text-align: left;
       line-height: 1.5;
       padding: 10px;
       background: #f2f2f0;
   }
+
   .quiz-story{
     padding: 30px;
     width: 70%;
@@ -56,9 +51,11 @@ li {
     text-align: center;
     border-radius: 10px;
   }
+
   .selected-btn {
     background-color: #4b5918;
   }
+  
   .bottom-footer{
     margin-top: 100px;
     background-color: #8C0B23;
