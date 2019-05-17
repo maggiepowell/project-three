@@ -73,7 +73,7 @@ function Footer() {
             <Container>
                 <Row>
                     <Col sm={12}>
-                        <p className="footer-text">Copyright 2019</p> 
+                        <p className="footer-text"><i class="far fa-copyright"></i> 2019</p> 
                     </Col>
                 </Row>       
             </Container>

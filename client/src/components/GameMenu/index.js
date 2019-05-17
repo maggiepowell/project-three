@@ -18,7 +18,7 @@ class GameMenu extends React.Component {
             <Row>
                 <Col size="sm-12">
                     <Row>
-                        <Col size="sm-3">
+                        <Col size="sm-12 md-3">
                         <Link to="/Memory">
                             <Flippy
                                 flipOnHover={true}
@@ -35,7 +35,7 @@ class GameMenu extends React.Component {
                             </Flippy>
                         </Link>
                         </Col>
-                        <Col size="sm-3">
+                        <Col size="sm-12 md-3">
                         <Link to="/MathGame">
                              <Flippy
                                 flipOnHover={true}
@@ -53,7 +53,7 @@ class GameMenu extends React.Component {
                             </Flippy>
                         </Link>
                         </Col>
-                        <Col size="sm-3">
+                        <Col size="sm-12 md-3">
                         <Link to="/MinesweeperGame">
                              <Flippy
                                 flipOnHover={true}
@@ -70,7 +70,7 @@ class GameMenu extends React.Component {
                             </Flippy>
                         </Link>
                         </Col>
-                        <Col size="sm-3">
+                        <Col size="sm-12 md-3">
                         <Link to="/Trivia">
                             <Flippy
                                 flipOnHover={true}

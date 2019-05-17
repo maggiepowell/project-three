@@ -6,9 +6,6 @@
     background-color: white;
 }
 
-img.img-fluid.back-image {
-    padding: 
-}
 
 h4 {
     font-family: bello-pro, sans-serif;
@@ -28,4 +25,13 @@ p {
     margin-top: .5rem;
     margin-bottom: 0;
     text-align: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .flippy-container {
+        margin-bottom: 1.5rem;
+    }
+
 }
