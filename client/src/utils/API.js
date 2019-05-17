@@ -21,5 +21,9 @@ export default {
   signup: function(signupInfo) {
     // send user signup info to API
     return axios.post("/api/auth/signup", signupInfo);
+  },
+  updateMath: function(guestScore) {
+    // return guest score to the database
+    return axios.post("/api/mathupdate", guestScore);
   }
 };
