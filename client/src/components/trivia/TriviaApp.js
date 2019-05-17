@@ -1,86 +1,70 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// import Question from './Question';
-import Quiz from './Quiz';
-import quizQuestions from './api/quizQuestions';
-import Result from './Results';
-import './TriviaApp.css';
 
-class TriviaApp extends React.Component {
+import React, { Component } from 'react';
+import quizQuestions from './api/quizQuestions';
+import Quiz from './Quiz';
+import Result from './Results';
+//import logo from './svg/logo.svg';
+// import './index.css';
+import './TriviaApp.css';
+class App extends Component {
 
   constructor(props) {
     super(props);
-  
+
     this.state = {
       counter: 0,
       questionId: 1,
       question: '',
       answerOptions: [],
+      allQuestions : [],
       answer: '',
-      answersCount: {
-        nintendo: 0,
-        microsoft: 0,
-        sony: 0
-      },
+      selectedAnswers : {},
       result: ''
     };
-
+    this.setNextQuestion = this.setNextQuestion.bind(this);
+    this.setPreviousQuestion = this.setPreviousQuestion.bind(this);
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
+    this.viewreults = this.viewreults.bind(this);
+
+
+  }
+  handleAnswerSelected(e){
+    var _self = this;
+    var obj = _self.state.selectedAnswers;
+    var index = parseInt(e.target.value);
+    console.log("for selected question number " + (_self.state.counter + 1) +  " answer is " + index + " selected");
+    var Qindex = (_self.state.counter )
+    // create map and store all selecred answers with quiz Questions
+    obj[Qindex] = index;
+    _self.setState({selectedAnswers : obj})
+
   }
 
-  componentDidMount() {
-    const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));  
-  
+  componentWillMount() {
     this.setState({
       question: quizQuestions[0].question,
-      answerOptions: shuffledAnswerOptions[0]
+      answerOptions : quizQuestions[0].answers,
+      allQuestions : quizQuestions
     });
-  }  
-
-  //randomise the order of the answer options
-  shuffleArray(array) {
-    var currentIndex = array.length,
-    temporaryValue,
-    randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-  
-    return array;
-  };
-
-  handleAnswerSelected(event) {
-    this.setUserAnswer(event.currentTarget.value);
-    if (this.state.questionId < quizQuestions.length) {
-        setTimeout(() => this.setNextQuestion(), 300);
-      } else {
-        setTimeout(() => this.setResults(this.getResults()), 300);
-            }
   }
 
-  setUserAnswer(answer) {
-    this.setState((state) => ({
-      answersCount: {
-        ...state.answersCount,
-        [answer]: state.answersCount[answer] + 1
-      },
-      answer: answer
-    }));
-  }
 
   setNextQuestion() {
     const counter = this.state.counter + 1;
     const questionId = this.state.questionId + 1;
+
+    this.setState({
+      counter: counter,
+      questionId: questionId,
+      question: quizQuestions[counter].question,
+      answerOptions: quizQuestions[counter].answers,
+      answer: ''
+    });
+  }
+  setPreviousQuestion() {
+    const counter = this.state.counter - 1;
+    const questionId = this.state.questionId - 1;
+
     this.setState({
       counter: counter,
       questionId: questionId,
@@ -95,11 +79,11 @@ class TriviaApp extends React.Component {
     const answersCountKeys = Object.keys(answersCount);
     const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
-  
+
     return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
   }
 
-  setResults (result) {
+  setResults(result) {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
@@ -109,58 +93,45 @@ class TriviaApp extends React.Component {
 
   renderQuiz() {
     return (
-      <Quiz
+      <Quiz viewreults={this.viewreults}
+        setNextQuestion={this.setNextQuestion}
+        counter={this.state.counter}
+        setPreviousQuestion={this.setPreviousQuestion}
         answer={this.state.answer}
+        selectedAnswer = {this.state.selectedAnswers[this.state.counter]}
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
         questionTotal={quizQuestions.length}
-        onAnswerSelected={this.handleAnswerSelected}
+        onAnswerSelected = {this.handleAnswerSelected}
       />
     );
   }
 
-  // renderAnswerOptions(key) {
-  //   return (
-  //     <AnswerOption
-  //       key={key.content}
-  //       answerContent={key.content}
-  //       answerType={key.type}
-  //       answer={this.props.answer}
-  //       questionId={this.props.questionId}
-  //       onAnswerSelected={this.props.onAnswerSelected}
-  //     />
-  //   );
-  // }
-
   renderResult() {
     return (
-      <Result quizResult={this.state.result} />
+      <Result quizResult={this.state.allQuestions} answers={this.state.selectedAnswers} />
+    );
+  }
+  viewreults(e){
+    e.preventDefault();
+    this.setState({result : true})
+  }
+ // decide to render result or quiz
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <h2>Quiz Assignment :</h2>
+        </div>
+        {this.state.result ? this.renderResult() : this.renderQuiz()}
+
+
+      </div>
+
     );
   }
 
-  render() {
-    return (
-      <div className="TriviaApp">
-      <div className="TriviaApp-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <h2>React Quiz</h2>
-      </div>
-      {this.state.result ? this.renderResult() : this.renderQuiz()}
-    </div>
-      );
-  }
 }
-  
-  TriviaApp.propTypes = {
-    answer: PropTypes.string.isRequired,
-    answerOptions: PropTypes.array.isRequired,
-    counter: PropTypes.number.isRequired,
-    question: PropTypes.string.isRequired,
-    questionId: PropTypes.number.isRequired,
-    questionTotal: PropTypes.number.isRequired,
-    onAnswerSelected: PropTypes.func.isRequired
-  };
-  
-  export default TriviaApp;
-  
+
+export default App;
