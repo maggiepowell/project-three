@@ -24,6 +24,17 @@ li {
     margin-top: 30px;
   }
 
+  .answerOption {
+    padding: 5px;
+  }
+
+button {
+    background-color: #4b5918;
+    border-color: #4b5918;
+    color: #f2f2f0;
+    margin: 2px;
+}
+
   .result-link {
     float: right;
       /* background-color: green; */
@@ -31,7 +42,7 @@ li {
   }
 
   .status{
-    color: #4b5918;
+    color: #f2f2f0;
   }
 
   .list-grp {
@@ -55,7 +66,7 @@ li {
   .selected-btn {
     background-color: #4b5918;
   }
-  
+
   .bottom-footer{
     margin-top: 100px;
     background-color: #8C0B23;
