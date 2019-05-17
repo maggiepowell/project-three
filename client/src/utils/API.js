@@ -13,22 +13,6 @@ const headers = () => {
 }
 
 export default {
-  // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books", headers());
-  },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id, headers());
-  },
-  // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id, headers());
-  },
-  // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData, headers());
-  },
   login: function(loginInfo) {
     // send user login info to API
     return axios.post("/api/auth/login", loginInfo);
@@ -36,5 +20,9 @@ export default {
   signup: function(signupInfo) {
     // send user signup info to API
     return axios.post("/api/auth/signup", signupInfo);
+  },
+  updateMath: function(guestScore) {
+    // return guest score to the database
+    return axios.post("/api/mathupdate", guestScore);
   }
 };

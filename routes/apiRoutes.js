@@ -26,6 +26,19 @@ module.exports = function (app) {
         });
     });
 
+    // Updates Guest For Math Game
+    app.post("/api/mathupdate", function(req, res) {
+        console.log(req.body);
+        db.Profiles.update({
+            leader_score: req.body,
+            where: {
+                username: 'Guest'
+            }
+        }).then(function (response) {
+            res.json(response);
+        });
+    });
+
     // Returns top scores for all games
     app.get("/api/champions", function(req, res) {
         const leaderPromise = db.Profiles.findAll({
