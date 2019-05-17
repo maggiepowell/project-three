@@ -10,7 +10,7 @@ const randomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 
-class Game extends Component {
+class MinesweeperGame extends Component {
 
   getChallengeNumbers = () => { 
     return Array.from({
@@ -191,4 +191,4 @@ class Game extends Component {
   }
 }
 
-export default Game;
+export default MinesweeperGame;

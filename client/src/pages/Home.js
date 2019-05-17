@@ -18,11 +18,11 @@ class Home extends React.Component {
       minesweeper: []
     };
   }
-  
-  
+
   componentDidMount() {
     axios.get('/api/champions')
     .then((res) => {
+      console.log(res);
       this.setState({...this.state, ...res.data});
     })
   }
