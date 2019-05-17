@@ -10,7 +10,7 @@ const randomNumberBetween = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min;
 
 
-class MinesweeperGame extends Component {
+class AddGame extends Component {
 
   getChallengeNumbers = () => { 
     return Array.from({
@@ -39,6 +39,20 @@ class MinesweeperGame extends Component {
   
   componentDidMount() {
     this.resetGame();
+  }
+
+  completeReset = () => {
+    this.setState({
+      hasGameStarted: false,
+      remainingSeconds: this.props.initialSeconds,
+      selectedIds: [],
+      target: 0,
+      challengeNumbers: [],
+      wins: 0,
+      losses: 0
+    })
+    this.resetGame();
+    this.startTimer();
   }
 
   resetGame = () => {
@@ -119,38 +133,39 @@ class MinesweeperGame extends Component {
   }
 
   showResults = () => {
-    if (this.state.hasGameEnded === true)
+    if (this.state.hasGameEnded === true) {
+     
     return (
       <MathGameResultModal 
-        onClick={this.startTimer}
+        wins={this.state.wins}
+        onClick={this.completeReset}
       />
-    )
+    );
+
+    }
   }
 
   render() {
     const { remainingSeconds } = this.state;
     return (
       <div className="game-body">
-        <div><MathGameModal
+        <MathGameModal
           onClick={this.startTimer}
-        /></div>
+        />
         <div>{this.showResults()}</div>
         <Container>
-          <div className="game-container">
-            <Row>
-              <Col size="sm-12">
-                <h1 className="text-center">
-                    Target Number: 
-                </h1>
-              </Col>
-            </Row>
             <Row>
               <Col size="sm-3"></Col>
               <Col size="sm-6">
-                  <h1 className="target text-center">{this.state.target}</h1>
+              <div className="target-container">
+                <h4 className="text-center">Target Number: </h4>
+                <h1 className="target text-center">{this.state.target}</h1>
+              </div>
               </Col>
               <Col size="sm-3"></Col>
             </Row>
+          </Container>
+          <Container>
             <Row>
             <Col size="sm-12">
               <div className="challenge-numbers">
@@ -167,18 +182,17 @@ class MinesweeperGame extends Component {
               </div>
             </Col>
             </Row>
-          </div>
           </Container>
           <Container>
               <Row>
                 <Col size="sm-6">
-                  <div className="time-score">
+                  <div className="score">
                     <h4>Seconds Remaining:</h4>
-                    <div className="timer">{remainingSeconds}</div>
+                    <div className="timer"><h4>{remainingSeconds}</h4></div>
                   </div>
                 </Col>
                 <Col size="sm-6">
-                  <div className="time-score">
+                  <div className="time">
                     <h4 className="text-center">Wins: {this.state.wins}</h4>
                     <h4 className="text-center">Losses: {this.state.losses}</h4>
                   </div>
@@ -191,4 +205,5 @@ class MinesweeperGame extends Component {
   }
 }
 
-export default MinesweeperGame;
+export default AddGame;
+

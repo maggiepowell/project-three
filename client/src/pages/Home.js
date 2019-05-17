@@ -29,14 +29,12 @@ class Home extends React.Component {
   
   render() {
     return (
-    <div className="page-container">
-      <div className="content-wrap">     
+      <div class="main-container">
         <GameCarousel></GameCarousel>
         <GameMenu></GameMenu>
         <LeaderBoardContainer stats={this.state}></LeaderBoardContainer>
         <Footer></Footer>
       </div>
-    </div>
     );
   }
 }

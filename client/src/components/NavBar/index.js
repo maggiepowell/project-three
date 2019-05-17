@@ -22,7 +22,7 @@ class NavBar extends Component {
             <Col size="sm-8">
               <Nav className="float-right">
                 <Nav.Link className="main-nav" href="home">Home</Nav.Link>
-                <Nav.Link className="main-nav" href="leaderboard">Leaderboard</Nav.Link>
+                <Nav.Link className="main-nav" href="leaderboard">Leaderboards</Nav.Link>
                 <Nav.Link className="main-nav" href="contact">Contact Us</Nav.Link>
               {
                 !isAuthenticated() && (

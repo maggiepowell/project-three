@@ -13,6 +13,7 @@ const headers = () => {
 }
 
 export default {
+  
   login: function(loginInfo) {
     // send user login info to API
     return axios.post("/api/auth/login", loginInfo);
