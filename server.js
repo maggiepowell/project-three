@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const express = require("express");
 const app = express();
 const sequelize = require("sequelize");
@@ -22,7 +23,7 @@ var syncOptions = { force: false };
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static(path.resolve(__dirname, "./client/build")));
 }
 
 // Starting the server, syncing our models ------------------------------------/
