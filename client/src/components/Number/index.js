@@ -20,7 +20,7 @@ class Number extends Component {
     return (
         <Col size="sm-6">
           <div>
-            <h1 className="text-center">
+            <h1 className="number-header text-center">
                 <div
                     className="number"
                     style={{ opacity: this.props.clickable ? 1 : 0.3 }}

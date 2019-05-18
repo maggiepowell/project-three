@@ -2,8 +2,8 @@ div#modal {
     border-radius: 4px;
     text-align: center;
     margin-top: 4rem;
-    width: 50%;
-    height: 43%;
+    min-width: 50%;
+    min-height: 60%;
 }
 
 p {

@@ -13,9 +13,11 @@ class Game extends React.Component {
   render() {
     const { height, width, mines } = this.state;
     return (
-      <div className="game-body">
-        <div className="game">
-          <Board height={height} width={width} mines={mines} />
+      <div className="body">
+        <div className="mines-game-body">
+          <div className="game">
+            <Board height={height} width={width} mines={mines} />
+          </div>
         </div>
       </div>
     );

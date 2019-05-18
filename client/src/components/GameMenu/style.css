@@ -29,3 +29,12 @@ p {
     margin-bottom: 0;
     text-align: center;
 }
+
+
+@media only screen and (max-width: 768px) {
+
+    .flippy-container {
+        margin-bottom: 1.5rem;
+    }
+
+}

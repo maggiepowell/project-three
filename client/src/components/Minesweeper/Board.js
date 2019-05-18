@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Cell from './Cell';
+import API from "../../utils/API";
 
 export default class Board extends React.Component {
   state = {
@@ -231,6 +232,7 @@ export default class Board extends React.Component {
     if (this.getHidden(updatedData).length === this.props.mines) {
       this.setState({ mineCount: 0, gameStatus: "You Win." });
       this.revealBoard();
+      API.updateMinesweeper();
       alert("You Win");
     }
 
@@ -262,6 +264,7 @@ export default class Board extends React.Component {
       if (JSON.stringify(mineArray) === JSON.stringify(FlagArray)) {
         this.setState({ mineCount: 0, gameStatus: "You Win." });
         this.revealBoard();
+        API.updateMinesweeper();
         alert("You Win");
       }
     }

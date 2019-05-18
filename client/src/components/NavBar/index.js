@@ -9,21 +9,24 @@ class NavBar extends Component {
   render() {
     const { isAuthenticated, login, logout } = this.props;
     return (
-      <Navbar bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
         <Container>
           <Row>
-            <Col size="sm-4">
+            <Col size="sm-12 md-4">
               <Navbar.Brand href="home">
                 <img src={Logo}
                 alt="logo" 
                 className="img-fluid"/>
               </Navbar.Brand>
             </Col>
-            <Col size="sm-8">
-              <Nav className="float-right">
+            <Col size="sm-12 md-8" className="text-center">
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" 
+            />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="ml-auto">
                 <Nav.Link className="main-nav" href="home">Home</Nav.Link>
-                <Nav.Link className="main-nav" href="leaderboard">Leaderboards</Nav.Link>
-                <Nav.Link className="main-nav" href="contact">Contact Us</Nav.Link>
+                <Nav.Link className="main-nav">Leaderboards</Nav.Link>
+                <Nav.Link className="main-nav">Contact Us</Nav.Link>
               {
                 !isAuthenticated() && (
                     <Button
@@ -48,11 +51,12 @@ class NavBar extends Component {
                     </Button>
                   )
               }
-                 </Nav>
-                </Col>
-              </Row>
-            </Container>
-          </Navbar>
+                </Nav>
+              </Navbar.Collapse>
+            </Col>
+          </Row>
+        </Container>
+    </Navbar>
         );
       }
   }
