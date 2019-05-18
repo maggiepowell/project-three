@@ -25,8 +25,8 @@ class NavBar extends Component {
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto">
                 <Nav.Link className="main-nav" href="home">Home</Nav.Link>
-                <Nav.Link className="main-nav">Leaderboards</Nav.Link>
-                <Nav.Link className="main-nav">Contact Us</Nav.Link>
+                <Nav.Link className="main-nav" href="leaderboard">Leaderboards</Nav.Link>
+                <Nav.Link className="main-nav" href="contact">Contact Us</Nav.Link>
               {
                 !isAuthenticated() && (
                     <Button
