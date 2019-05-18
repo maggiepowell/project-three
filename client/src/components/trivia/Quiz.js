@@ -1,46 +1,45 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOption';
 
 function Quiz(props) {
-    function renderAnswerOptions(key) {
-        return (
-          <AnswerOption
-            key={key.content}
-            answerContent={key.content}
-            answerType={key.type}
-            answer={props.answer}
-            questionId={props.questionId}
-            onAnswerSelected={props.onAnswerSelected}
-          />
-        );
-      }
-      
+
+  function renderAnswerOptions(key,index) {
     return (
-        <div className="quiz">
-          <QuestionCount
-            counter={props.questionId}
-            total={props.questionTotal}
-          />
-          <Question content={props.question} />
-          <ul className="answerOptions">
-            {props.answerOptions.map(renderAnswerOptions)}
-          </ul>
-        </div>
+      <AnswerOption
+        index ={index}
+        key={key.content}
+        answerContent={key.content}
+        answerType={key.type}
+        answer={props.answer}
+        questionId={props.questionId}
+        selectedAnswer={props.selectedAnswer}
+        onAnswerSelected={props.onAnswerSelected}
+      />
     );
   }
-  
-  Quiz.propTypes = {
-    answer: PropTypes.string.isRequired,
-    answerOptions: PropTypes.array.isRequired,
-    counter: PropTypes.number.isRequired,
-    question: PropTypes.string.isRequired,
-    questionId: PropTypes.number.isRequired,
-    questionTotal: PropTypes.number.isRequired,
-    onAnswerSelected: PropTypes.func.isRequired
-  };
-  
-  export default Quiz;
-  
+
+
+  return (
+      <div key={props.questionId} className="quiz-story">
+        <QuestionCount counter={props.counter} viewreults={props.viewreults}
+          counter={props.questionId}
+          total={props.questionTotal}
+        />
+        <Question  content={props.question} />
+        <ul className="answerOptions">
+          {props.answerOptions.map(renderAnswerOptions)}
+        </ul>
+        <div className="bottom-footer" >
+          {props.counter > 0 ? (<button className="Previous-btn" onClick={props.setPreviousQuestion} >Previous</button>) : (<div></div>)}
+
+          {props.counter < 4 ? (<button className="next-btn" onClick={props.setNextQuestion} >Next</button>) : (<div></div>)}
+
+      </div>
+      </div>
+  );
+}
+
+
+export default Quiz;

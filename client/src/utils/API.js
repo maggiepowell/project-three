@@ -24,6 +24,6 @@ export default {
   },
   updateMath: function(guestScore) {
     // return guest score to the database
-    return axios.post("/api/mathupdate", guestScore);
+    return axios.post("/api/mathupdate", { score: guestScore });
   }
 };
