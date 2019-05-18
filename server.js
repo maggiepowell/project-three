@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require("express");
 const app = express();
+const sequelize = require("sequelize");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Sets requests to use json and set req.body
 const routes = require("./routes/apiRoutes")(app);
