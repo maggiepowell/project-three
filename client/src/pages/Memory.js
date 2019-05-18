@@ -57,7 +57,7 @@ class Memory extends Component {
     return (
       <Wrapper>
         <Navbar score={this.state.score} highscore={this.state.highscore}/>
-        <header className="header">
+        <header className="memory-header">
           <h1>Memory Game!</h1>
           <h2>Click an image! Once you click the character, don't click them again!  </h2>
         </header>

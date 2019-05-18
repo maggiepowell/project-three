@@ -1,10 +1,11 @@
+
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-.game-body {
+.mines-game-body {
   background-image: url("../HomePageImages/minesweeper-background.jpg");
   background-size: 100% 100%;
   background-attachment: fixed;
@@ -13,8 +14,7 @@
   height: -webkit-fill-available;
 }
 
-body {
-  margin: 20px;
+.body {
   padding: 0;
   font-family: sans-serif;
   background: #f4f4f4;

@@ -2,8 +2,8 @@ div#resultsModal {
     border-radius: 4px;
     text-align: center;
     margin-top: 4rem;
-    width: 50%;
-    height: 25%;
+    min-width: 50%;
+    min-height: 50%;
 }
 
 
