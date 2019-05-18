@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./style.css";
+import { Link } from 'react-router-dom'
 import { Navbar, Nav, Button } from 'react-bootstrap';
 //import auth0 from 'auth0-js';
 import Logo from "../HomePageImages/logo.png" 
@@ -13,20 +14,22 @@ class NavBar extends Component {
         <Container>
           <Row>
             <Col size="sm-12 md-4">
-              <Navbar.Brand href="/Home">
-                <img src={Logo}
-                alt="logo" 
-                className="img-fluid"/>
-              </Navbar.Brand>
+              <Link to="/Home">
+                <Navbar.Brand >
+                  <img src={Logo}
+                  alt="logo" 
+                  className="img-fluid"/>
+                </Navbar.Brand>
+              </Link>
             </Col>
             <Col size="sm-12 md-8" className="text-center">
             <Navbar.Toggle aria-controls="responsive-navbar-nav" 
             />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto">
-                <Nav.Link className="main-nav" href="/Home">Home</Nav.Link>
-                <Nav.Link className="main-nav" href="leaderboard">Leaderboards</Nav.Link>
-                <Nav.Link className="main-nav" href="contact">Contact Us</Nav.Link>
+                <Link to="/Home" className="main-nav nav-link">Home</Link>
+                <Nav.Link className="main-nav">Leaderboards</Nav.Link>
+                <Nav.Link className="main-nav">Contact Us</Nav.Link>
               {
                 !isAuthenticated() && (
                     <Button
