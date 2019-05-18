@@ -25,13 +25,37 @@ To run this app you will need a terminal, node, and MySQL Workbench or MySQL for
 git clone + SSH key
 ```
 
-* Navigate into the client folder and run the following:
+* Inside project-three folder run the following:
 
 ```
 npm i
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+* Next, navigate into the client folder and run the following:
+
+```
+npm i
+```
+
+* Open MySQL workbench or use MySQL in VS Code and run the following files:
+
+```
+project-three/models/schema.sql
+project-three/models/seeds.sql
+```
+
+* To start the server run the following while inside project-three:
+
+```
+node server.js
+```
+
+* Navigate to project-three/client/ and run the following to see the app live on localhost:3000 :
+
+```
+npm start
+```
+
 
 ## Running the tests
 
