@@ -1,3 +1,8 @@
+  .TriviaApp {
+      background-image: url("images/aframe_cabins.jpg");
+      height: 800px;
+  }
+  
   .TriviaApp-header {
     background-color: #8C0B23;
     padding: 20px;
