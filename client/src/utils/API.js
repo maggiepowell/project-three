@@ -25,5 +25,11 @@ export default {
   updateMath: function(guestScore) {
     // return guest score to the database
     return axios.post("/api/mathupdate", { score: guestScore });
+  },
+  updateMinesweeper: function(){
+    return axios.post("/api/minesupdate");
+  },
+  updateQuiz: function(){
+    return axios.post("/api/feelgoodquiz");
   }
 };
