@@ -81,17 +81,13 @@ Give an example
 
 [Heroku Link](https://camp-wannagetajob.herokuapp.com/)
 
-## Built With
+## Built With:
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Trello](http://www.trello.com/) - Project Management
+* [Bootstrap](https://maven.apache.org/) - Front End 
+* [React Bootstrap](https://react-bootstrap.github.io/) - Front End
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
+## Authors:
 
 * **Marguerite Schuster** - [GitHub](https://github.com/mschuster4)
 * **Maggie Powell** - [GitHub](https://github.com/maggiepowell)
