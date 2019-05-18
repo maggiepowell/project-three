@@ -14,7 +14,7 @@ class NavBar extends Component {
         <Container>
           <Row>
             <Col size="sm-12 md-4">
-              <Link to="/Home">
+              <Link to="/">
                 <Navbar.Brand >
                   <img src={Logo}
                   alt="logo" 
@@ -27,7 +27,7 @@ class NavBar extends Component {
             />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="ml-auto">
-                <Link to="/Home" className="main-nav nav-link">Home</Link>
+                <Link to="/" className="main-nav nav-link">Home</Link>
                 <Nav.Link className="main-nav">Leaderboards</Nav.Link>
                 <Nav.Link className="main-nav">Contact Us</Nav.Link>
               {
