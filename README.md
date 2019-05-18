@@ -13,26 +13,22 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+To run this app you will need a terminal, node, and MySQL Workbench or MySQL for VS Code. 
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+* Navigate to [Project-Three GitHub](https://github.com/maggiepowell/project-three)
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+* Clone the repository to your computer using Terminal:
 
 ```
-until finished
+git clone + SSH key
+```
+
+* Navigate into the client folder and run the following:
+
+```
+npm i
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
