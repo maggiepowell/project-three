@@ -96,6 +96,4 @@ Give an example
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Thank you to Carlos at Tshirt Mart in Point Loma, CA!
