@@ -84,7 +84,7 @@ class GameMenu extends React.Component {
                                 <FrontSide>
                                     <h4 className="text-center">Quiz Bowl</h4>
                                     <Card.Img src={TriviaIcon} alt="trivia"/>
-                                    <p>Improve your critcal thinking and deductive reasoning.</p>
+                                    <p>Figure out which career path is right for you.</p>
                                 </FrontSide>
                                 <BackSide>
                                     <h4 className="text-center">Preview</h4>

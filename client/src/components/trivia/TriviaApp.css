@@ -1,4 +1,13 @@
-  .App-header {
+  .TriviaApp {
+      background-image: url("images/aframe_cabins.jpg");
+      height: 800px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  
+  .TriviaApp-header {
     background-color: #8C0B23;
     padding: 20px;
     color: #f2f2f0;
@@ -50,8 +59,7 @@ button {
     padding: 30px;
     width: 70%;
     background-color: #f2f2f0;
-    /* padding-left: 10px; */
-    margin: auto;
+    margin: 40px auto auto auto;
     min-height: 400px;
     text-align: center;
     border-radius: 10px;

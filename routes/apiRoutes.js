@@ -41,6 +41,62 @@ module.exports = function (app) {
         });
     });
 
+    //Update Minesweeper Database for 
+    app.post("/api/minesupdate", function(req, res) {
+        var minesScore;
+
+        db.Profiles.findOne({
+            attributes: ['score_minesweeper'],
+            where: {
+                username: 'Guest'
+            }
+        }).then(function(response){
+            minesScore = response.score_minesweeper;
+            minesScore++;
+            console.log(minesScore);
+            return minesScore;
+        }).then(function(){
+            console.log(minesScore);
+            return db.Profiles.update({
+                score_minesweeper: minesScore,
+            },{
+                where: {
+                    username: 'Guest'
+                }
+            })
+        }).then(function (response) {
+            res.send(200).end();
+        });
+    });
+
+    //Feel good quiz database update
+    app.post("/api/feelgoodquiz", function(req, res) {
+        var quizScore;
+
+        db.Profiles.findOne({
+            attributes: ['score_trivia'],
+            where: {
+                username: 'Guest'
+            }
+        }).then(function(response){
+            quizScore = response.score_trivia;
+            quizScore++;
+            console.log(quizScore);
+            return quizScore;
+        }).then(function(){
+            console.log(quizScore);
+            return db.Profiles.update({
+                score_trivia: quizScore,
+            },{
+                where: {
+                    username: 'Guest'
+                }
+            })
+        }).then(function (response) {
+            res.send(200).end();
+        });
+    });
+
     // Returns top scores for all games
     app.get("/api/champions", function(req, res) {
         const leaderPromise = db.Profiles.findAll({
