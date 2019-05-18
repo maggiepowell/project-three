@@ -7,6 +7,7 @@ import MemoryIcon from "../HomePageImages/memory-icon.png";
 import TriviaIcon from "../HomePageImages/trivia-icon.png";
 import MinesIcon from "../HomePageImages/minesweeper-icon.png";
 import DigitDash from "../HomePageImages/digit-dash.png";
+import Quiz from "../HomePageImages/quiz.png";
 import Mines from "../HomePageImages/mines.png"
 import Memory from "../HomePageImages/memory.png"
 import Card from "react-bootstrap/Card";
@@ -87,6 +88,7 @@ class GameMenu extends React.Component {
                                 </FrontSide>
                                 <BackSide>
                                     <h4 className="text-center">Preview</h4>
+                                    <img className="img-fluid back-image" src={Quiz} alt="quiz" />
                                 </BackSide>
                             </Flippy>
                         </Link>

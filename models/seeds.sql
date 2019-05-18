@@ -14,4 +14,6 @@ VALUES ("playerone", 8, 4, 1, 1, 2, "2019-01-01", "2019-01-01"),
 ("playerten", 4, 1, 1, 1, 1, "2019-01-01", "2019-01-01"),
 ("Guest", 0, 0, 0, 0, 0, "2019-01-01", "2019-01-01");
 
+USE wannagetajob_db;
+
 SELECT * FROM Profiles;
