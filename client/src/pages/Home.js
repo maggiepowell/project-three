@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
 import GameCarousel from "../components/GameCarousel";
 import GameMenu from "../components/GameMenu";
 import LeaderBoardContainer from "../components/LeaderBoardContainer";
