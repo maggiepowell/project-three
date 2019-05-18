@@ -6,6 +6,9 @@
     background-color: white;
 }
 
+img.img-fluid.back-image {
+    padding: 2px;
+}
 
 h4 {
     font-family: bello-pro, sans-serif;

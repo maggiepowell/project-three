@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import NavBar from "./components/NavBar";
 import MathGame from "./pages/MathGame";
@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import { Route, Switch } from "react-router-dom";
 
 
-class App extends Component {
+export default class App extends React.Component {
 
   goTo = (route) => {
     this.props.history.replace(`/${route}`)
@@ -56,5 +56,3 @@ class App extends Component {
   }
 
 }
-
-export default App;
