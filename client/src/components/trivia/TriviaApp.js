@@ -6,6 +6,8 @@ import Result from './Results';
 //import logo from './svg/logo.svg';
 // import './index.css';
 import './TriviaApp.css';
+import API from "../../utils/API";
+
 class App extends Component {
 
   constructor(props) {
@@ -109,6 +111,7 @@ class App extends Component {
   }
 
   renderResult() {
+    API.updateQuiz();
     return (
       <Result quizResult={this.state.allQuestions} answers={this.state.selectedAnswers} />
     );
