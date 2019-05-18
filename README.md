@@ -2,6 +2,8 @@
 
 We created a MERN application with games, leaderboards, and and user profiles. Users will be able to use our site to prepare for the job hunt process. Our site provides a fun way to approach an uncomfortable topic, getting a new job.
 
+![Homepage](./assets/wannagetajob_hp.png?raw=true "Homepage")
+
 ![Rough Draft of UI](./assets/UI_Rough_Draft.jpg?raw=true "Rough Draft of UI")
 
 
@@ -11,29 +13,49 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
+To run this app you will need a terminal, node, and MySQL Workbench or MySQL for VS Code. 
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+* Navigate to [Project-Three GitHub](https://github.com/maggiepowell/project-three)
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+* Clone the repository to your computer using Terminal:
 
 ```
-until finished
+git clone + SSH key
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+* Inside project-three folder run the following:
+
+```
+npm i
+```
+
+* Next, navigate into the client folder and run the following:
+
+```
+npm i
+```
+
+* Open MySQL workbench or use MySQL in VS Code and run the following files:
+
+```
+project-three/models/schema.sql
+project-three/models/seeds.sql
+```
+
+* To start the server run the following while inside project-three:
+
+```
+node server.js
+```
+
+* Navigate to project-three/client/ and run the following to see the app live on localhost:3000 :
+
+```
+npm start
+```
+
 
 ## Running the tests
 
@@ -55,21 +77,17 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
+## Deployed with Heroku:
 
-Add additional notes about how to deploy this on a live system
+[Heroku Link](https://camp-wannagetajob.herokuapp.com/)
 
-## Built With
+## Built With:
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Trello](http://www.trello.com/) - Project Management
+* [Bootstrap](https://maven.apache.org/) - Front End 
+* [React Bootstrap](https://react-bootstrap.github.io/) - Front End
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
+## Authors:
 
 * **Marguerite Schuster** - [GitHub](https://github.com/mschuster4)
 * **Maggie Powell** - [GitHub](https://github.com/maggiepowell)
@@ -78,6 +96,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Thank you to Carlos at Tshirt Mart in Point Loma, CA!

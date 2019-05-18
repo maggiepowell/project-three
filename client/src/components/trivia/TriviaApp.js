@@ -120,9 +120,9 @@ class App extends Component {
  // decide to render result or quiz
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Quiz Assignment :</h2>
+      <div className="TriviaApp">
+        <div className="TriviaApp-header">
+          <h2>Passion Quiz:</h2>
         </div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
 
