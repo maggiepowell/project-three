@@ -2,6 +2,8 @@
 
 We created a MERN application with games, leaderboards, and and user profiles. Users will be able to use our site to prepare for the job hunt process. Our site provides a fun way to approach an uncomfortable topic, getting a new job.
 
+![Homepage](./assets/wannagetajob_hp.png?raw=true "Homepage")
+
 ![Rough Draft of UI](./assets/UI_Rough_Draft.jpg?raw=true "Rough Draft of UI")
 
 
