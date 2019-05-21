@@ -13,7 +13,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'dev-6gezx8ko.auth0.com',
     clientID: 'rHdh4xPh55X8lBCJuXUHqPbCSMqYs8H5',
-    redirectUri: 'https://camp-wannagetajob.herokuapp.com/callback',
+    redirectUri: 'https://camp-wannagetajob.herokuapp.com/',
     responseType: 'token id_token',
     scope: 'openid profile'
   });
