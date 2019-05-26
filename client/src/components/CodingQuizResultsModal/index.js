@@ -27,7 +27,7 @@ class CodingQuizResultsModal extends React.Component {
   render() {
     const { open } = this.state;
 
-    if (this.props.correct < 4) {
+    if (this.props.correct < 10) {
         return (
             <div>
             <Modal 

@@ -1,8 +1,9 @@
 import React from "react";
-import HtmlQuestions from "./HTMLQuestions.json"
+import HtmlQuestions from "./HtmlQuestions.json"
 import Quiz from "react-quiz-component";
 import {Container, Row, Col} from "../Grid";
 import CodingQuizResultsModal from "../CodingQuizResultsModal";
+import "./style.css";
 
 const renderCustomResultPage = (obj) => {
     console.log(obj.numberOfCorrectAnswers);

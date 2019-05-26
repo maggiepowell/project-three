@@ -51,7 +51,7 @@ export default class App extends React.Component {
           <Route exact path="/Trivia" component={Trivia} />
           <Route exact path="/MinesweeperGame" component={MinesweeperGame} />
           <Route exact path="/Memory" component={Memory} />
-          <Route exact path="/HtmlHeroes" componenet={HtmlHeroes} />
+          <Route exact path="/HtmlHeroes" component={HtmlHeroes} />
         </Switch>
       </div>
     );

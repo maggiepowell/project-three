@@ -5,7 +5,7 @@ class HtmlHeroes extends Component {
     render() {
         return (
             <div>
-                <HtmlQuiz></HtmlQuiz>
+                <HtmlQuiz />
             </div>
         );
     }
