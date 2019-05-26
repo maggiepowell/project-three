@@ -6,7 +6,7 @@ import Trivia from "./pages/Trivia";
 import Memory from "./pages/Memory";
 import MinesweeperGame from "./pages/MinesweeperGame";
 import Home from "./pages/Home";
-import HTMLQuiz from "./components/HTMLQuiz";
+import HtmlHeroes from "./pages/HtmlHeroes";
 import { Route, Switch } from "react-router-dom";
 
 
@@ -38,9 +38,6 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div><HTMLQuiz></HTMLQuiz></div>
-
-      /*
     <div>
       <NavBar
           isAuthenticated={this.isAuthenticated}
@@ -54,9 +51,9 @@ export default class App extends React.Component {
           <Route exact path="/Trivia" component={Trivia} />
           <Route exact path="/MinesweeperGame" component={MinesweeperGame} />
           <Route exact path="/Memory" component={Memory} />
+          <Route exact path="/HtmlHeroes" componenet={HtmlHeroes} />
         </Switch>
       </div>
-      */
     );
   }
 
