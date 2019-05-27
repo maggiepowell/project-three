@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import HtmlQuiz from "../components/HtmlQuiz";
+import HtmlQuiz from "../components/HTMLQuiz";
 
 class HtmlHeroes extends Component {
     render() {
