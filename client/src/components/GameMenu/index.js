@@ -158,7 +158,7 @@ class GameMenu extends React.Component {
                         </Link>
                         </Col>
                         <Col size="sm-12 md-3">
-                        <Link to="/Trivia">
+                        <Link to="/DataDivers">
                             <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
