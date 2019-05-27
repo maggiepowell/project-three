@@ -140,7 +140,7 @@ class GameMenu extends React.Component {
                         </Link>
                         </Col>
                         <Col size="sm-12 md-3">
-                        <Link to="/MinesweeperGame">
+                        <Link to="/JsJunkies">
                              <Flippy
                                 flipOnHover={true}
                                 flipDirection="horizontal"
@@ -148,7 +148,7 @@ class GameMenu extends React.Component {
                                 <FrontSide>
                                     <h4 className="text-center">JS Junkies</h4>
                                     <Card.Img src={jsIcon} alt="mines"/>
-                                    <p>Get familiar with Javascript interview questions.</p>
+                                    <p>Get familiar with JavaScript interview questions.</p>
                                 </FrontSide>
                                 <BackSide>
                                     <h4 className="text-center">Preview</h4>
