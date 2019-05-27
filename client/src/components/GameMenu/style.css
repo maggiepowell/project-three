@@ -18,6 +18,11 @@ img.card-img {
     height: 16vh;
 }
 
+img.img-fluid.back-image {
+    height: 20vh;
+    width: 100%;
+}
+
 h4 {
     font-family: bello-pro, sans-serif;
     font-weight: 400;

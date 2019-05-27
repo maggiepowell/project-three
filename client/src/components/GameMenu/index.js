@@ -15,6 +15,10 @@ import Quiz from "../HomePageImages/quiz.png";
 import Mines from "../HomePageImages/mines.png"
 import Memory from "../HomePageImages/memory.png"
 import Card from "react-bootstrap/Card";
+import htmlPreview from "../HomePageImages/htmlPreview.png";
+import cssPreview from "../HomePageImages/cssPreview.png";
+import jsPreview from "../HomePageImages/jsPreview.png";
+import dataPreview from "../HomePageImages/dataPreview.png";
 import "./style.css"
 
 
@@ -116,7 +120,7 @@ class GameMenu extends React.Component {
                                 </FrontSide>
                                 <BackSide>
                                     <h4 className="text-center">Preview</h4>
-                                    <img className="img-fluid back-image" src={Memory} alt="memory"/>
+                                    <img className="img-fluid back-image" src={htmlPreview} alt="html"/>
                                 </BackSide>
                             </Flippy>
                         </Link>
@@ -134,7 +138,7 @@ class GameMenu extends React.Component {
                                 </FrontSide>
                                 <BackSide>
                                     <h4 className="text-center">Preview</h4>
-                                    <img className="img-fluid back-image" src={DigitDash} alt="digit"/>
+                                    <img className="img-fluid back-image" src={cssPreview} alt="digit"/>
                                 </BackSide>
                             </Flippy>
                         </Link>
@@ -152,7 +156,7 @@ class GameMenu extends React.Component {
                                 </FrontSide>
                                 <BackSide>
                                     <h4 className="text-center">Preview</h4>
-                                    <img className="img-fluid back-image" src={Mines} alt="mines"/>
+                                    <img className="img-fluid back-image" src={jsPreview} alt="mines"/>
                                 </BackSide>
                             </Flippy>
                         </Link>
@@ -170,7 +174,7 @@ class GameMenu extends React.Component {
                                 </FrontSide>
                                 <BackSide>
                                     <h4 className="text-center">Preview</h4>
-                                    <img className="img-fluid back-image" src={Quiz} alt="quiz" />
+                                    <img className="img-fluid back-image" src={dataPreview} alt="quiz" />
                                 </BackSide>
                             </Flippy>
                         </Link>
