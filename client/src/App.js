@@ -7,6 +7,7 @@ import Memory from "./pages/Memory";
 import MinesweeperGame from "./pages/MinesweeperGame";
 import Home from "./pages/Home";
 import HtmlHeroes from "./pages/HtmlHeroes";
+import CssCrusaders from "./pages/CssCrusaders";
 import { Route, Switch } from "react-router-dom";
 
 
@@ -52,6 +53,7 @@ export default class App extends React.Component {
           <Route exact path="/MinesweeperGame" component={MinesweeperGame} />
           <Route exact path="/Memory" component={Memory} />
           <Route exact path="/HtmlHeroes" component={HtmlHeroes} />
+          <Route exact path="/CssCrusaders" component={CssCrusaders} />
         </Switch>
       </div>
     );

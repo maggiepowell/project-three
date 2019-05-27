@@ -1,5 +1,5 @@
 import React from "react";
-import HtmlQuestions from "./HtmlQuestions.json"
+import JsQuestions from "./JsQuestions.json"
 import Quiz from "react-quiz-component";
 import {Container, Row, Col} from "../Grid";
 import CodingQuizResultsModal from "../CodingQuizResultsModal";
@@ -17,16 +17,16 @@ const renderCustomResultPage = (obj) => {
 }
 
 
-class HtmlQuiz extends React.Component {
+class JsQuiz extends React.Component {
 
     render() {
         return (
-            <div className="html-quiz-body">
+            <div className="js-quiz-body">
                 <Container>
                     <Row>
                         <Col size="sm-2"></Col>
                         <Col size="sm-8">
-                            <Quiz quiz={HtmlQuestions} showDefaultResult={false} customResultPage={renderCustomResultPage}/>
+                            <Quiz quiz={JsQuestions} showDefaultResult={false} customResultPage={renderCustomResultPage}/>
                         </Col>
                         <Col size="sm-2"></Col>
                     </Row>
@@ -37,4 +37,4 @@ class HtmlQuiz extends React.Component {
 
 }
 
-export default HtmlQuiz;
+export default JsQuiz;

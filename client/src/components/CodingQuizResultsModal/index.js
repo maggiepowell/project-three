@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from 'react-responsive-modal';
+import { Link } from 'react-router-dom'
 import "./style.css"
  
 class CodingQuizResultsModal extends React.Component {
@@ -17,12 +18,6 @@ class CodingQuizResultsModal extends React.Component {
   };
 
 
-  handleClick = () => {
-      this.onCloseModal();
-      this.props.onClick();
-      console.log("clicked!");
-  }
-
  
   render() {
     const { open } = this.state;
@@ -39,7 +34,7 @@ class CodingQuizResultsModal extends React.Component {
                 closeOnOverlayClick={false}
             >
                 <p className="results-text">You scored {this.props.correct}</p>
-                <button className="results-button" onClick={this.handleClick}>Play Again</button>
+               <Link to="/Home"><button className="home-button">Return to Camp</button></Link>
             </Modal>
             </div>
         );
@@ -58,7 +53,7 @@ class CodingQuizResultsModal extends React.Component {
             >
                 <p className="results-text">You scored {this.props.correct}.  This is the highest score possible</p>
                 <p>Here is your badge: </p>
-                <button className="results-button" onClick={this.handleClick}>Play Again</button>
+                <Link to="/Home"><button className="home-button">Return to Camp</button></Link>
             </Modal>
             </div>
             
