@@ -22,7 +22,7 @@ app.use('*', (req, res, next) => {
 
 // Add routes, both API and view
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
