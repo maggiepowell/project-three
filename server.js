@@ -5,7 +5,6 @@ const app = express();
 const sequelize = require("sequelize");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Sets requests to use json and set req.body
-const routes = require("./routes/apiRoutes")(app);
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
 var mysql = require('mysql');
@@ -21,8 +20,8 @@ app.use('*', (req, res, next) => {
 })
 
 // Add routes, both API and view
-
-var syncOptions = { force: true };
+require("./routes/apiRoutes")(app);
+var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
