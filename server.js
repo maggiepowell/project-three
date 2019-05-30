@@ -8,6 +8,10 @@ app.use(express.json()); // Sets requests to use json and set req.body
 const routes = require("./routes/apiRoutes")(app);
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
+var mysql = require('mysql');
+var connection = mysql.createConnection(process.env.JAWSDB_URL);
+connection.connect();
+connection.end();
 
 // Define middleware here
 
