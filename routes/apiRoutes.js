@@ -98,7 +98,7 @@ module.exports = function (app) {
     });
 
     // Returns top scores for all games
-    app.get("/api/champions", function(req, res) {
+    app.get("/api/profiles", function(req, res) {
         const leaderPromise = db.Profiles.findAll({
             attributes: ['username', 'leader_score'],
             limit: 10,
