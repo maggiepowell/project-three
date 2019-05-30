@@ -1,5 +1,9 @@
 .container.game-menu-container {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.flippy-cardContainer-wrapper {
+    margin-bottom: 1.5rem;
 }
 
 .flippy-front, .flippy-back {
@@ -8,6 +12,15 @@
 
 img.img-fluid.back-image {
     padding: 2px;
+}
+
+img.card-img {
+    height: 16vh;
+}
+
+img.img-fluid.back-image {
+    height: 20vh;
+    width: 100%;
 }
 
 h4 {
