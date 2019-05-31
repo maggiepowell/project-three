@@ -18,7 +18,7 @@ class LeaderBoard extends Component {
     return (
       <Row>
         <Col size="sm-12">
-          <zing-grid caption="Hello Futurama"  className="leader-board" id="Leaderboard" data={JSON.stringify(this.props.stats)}></zing-grid>
+          <zing-grid className="leader-board" id="Leaderboard" data={JSON.stringify(this.props.stats)}></zing-grid>
         </Col>
       </Row>
     );
