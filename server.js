@@ -5,12 +5,9 @@ const app = express();
 const sequelize = require("sequelize");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json()); // Sets requests to use json and set req.body
+const routes = require("./routes/apiRoutes")(app);
 const PORT = process.env.PORT || 3001;
 var db = require("./models");
-var mysql = require('mysql');
-var connection = mysql.createConnection(process.env.JAWSDB_URL);
-connection.connect();
-connection.end();
 
 // Define middleware here
 
@@ -20,12 +17,12 @@ app.use('*', (req, res, next) => {
 })
 
 // Add routes, both API and view
-require("./routes/apiRoutes")(app);
+
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
+if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.resolve(__dirname, "./client/build")));
 }
 

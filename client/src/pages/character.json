@@ -39,13 +39,13 @@
   {
     "id": 7,
     "name": "Donkey Kong",
-    "image": "characterImg/DonkeyKong.PNG",
+    "image": "characterImg/DonkeyKong.png",
     "count": 0
   },
   {
     "id": 8,
     "name": "Toadette",
-    "image": "characterImg/Toadette.PNG",
+    "image": "characterImg/Toadette.png",
     "count": 0
   },
   {
