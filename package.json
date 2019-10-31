@@ -14,7 +14,7 @@
     "path": "^0.12.7",
     "react-flippy": "^0.1.2",
     "react-sticky-footer": "0.1.0-rc3",
-    "sequelize": "^5.7.6",
+    "sequelize": "^5.15.1",
     "zinggrid": "^1.1.0"
   },
   "devDependencies": {},
